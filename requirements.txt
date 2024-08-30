@@ -1,0 +1,10 @@
+# Core dependencies
+Cython>=0.29
+setuptools>=42
+wheel
+
+# Testing dependencies
+pytest
+
+# Additional dependencies
+
