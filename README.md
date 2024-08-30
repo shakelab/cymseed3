@@ -105,5 +105,4 @@
  ## Contact
 
  - Author: Valerio Poggi
- - Email: vpoggi@ogs.it
- - GitHub: [your-username](https://github.com/your-username)
+ - GitHub: https://github.com/klunk386
