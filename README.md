@@ -1,6 +1,6 @@
-# cymseed3
+# CyMSeed3
 
- `cymseed3` is a Python package for reading and writing MiniSEED files using the `libmseed` library. This package provides a simple and efficient interface for handling seismic data in the MiniSEED format, making it easy to import, export, and manipulate seismic records.
+ `cymseed3` is a Python package for reading and writing MiniSEED files using the `libmseed` library Version 3 (currently 3.1.3). This package provides a simple and efficient interface for handling seismic data in the MiniSEED format, making it easy to import, export, and manipulate seismic records.
 
  ## Features
 
@@ -24,12 +24,10 @@
  You can install `cymseed3` directly from the source using pip. Clone the repository and run the installation command:
 
  ```bash
- git clone https://github.com/your-username/cymseed3.git
+ git clone https://github.com/shakelab/cymseed3.git
  cd cymseed3
  pip install .
  ```
-
- Replace `your-username` with your GitHub username.
 
  ## Usage
 
@@ -74,8 +72,6 @@
  print(rec_list[0])
  ```
 
- ### Example Output
-
  Running the example above will print the first record from the MiniSEED file as a Python dictionary, showing details like network, station, channel, and the data itself.
 
  ## Contributing
@@ -96,7 +92,7 @@
 
  ## Acknowledgements
 
- `cymseed3` uses the `libmseed` library for handling MiniSEED files. Special thanks to the contributors of `libmseed` for providing a robust library for seismic data processing.
+ `cymseed3` uses the `libmseed` library for handling MiniSEED files (https://github.com/EarthScope/libmseed). The `libmseed` library is distributed by Data EarthScope Services (Copyright (C) 2024 Chad Trabant) under the Apache License, Version 2.0. A copy of the library and its license is included in this package.
 
  ## Support
 
