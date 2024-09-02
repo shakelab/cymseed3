@@ -18,6 +18,9 @@
  * limitations under the License.
  ***************************************************************************/
 
+#define _POSIX_C_SOURCE 200809L
+#include <time.h>
+
 /* Define _LARGEFILE_SOURCE to get ftello/fseeko on some systems (Linux) */
 #define _LARGEFILE_SOURCE 1
 
