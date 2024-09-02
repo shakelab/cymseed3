@@ -3,7 +3,7 @@ from Cython.Build import cythonize
 import os
 
 # Directory of the C library
-libmseed_dir = os.path.join('cymseed3', 'EarthScope', 'libmseed-3.1.3')
+libmseed_dir = os.path.join('earthscope', 'libmseed-3.1.3')
 
 # Read the README file for the long description
 long_description = ""
@@ -32,26 +32,33 @@ libmseed_sources = [
     os.path.join(libmseed_dir, 'yyjson.c'),
 ]
 
+# Compiler and linker flags
+extra_compile_args = ['-std=c99', '-O2', '-Wall', '-DLIBMSEED_STATIC']
+extra_link_args = ['-lm']
+
+# Include directories
+include_dirs = [libmseed_dir]
+
 # Define the extension module
 ext_modules = [
     Extension(
-        name="cymseed3.libmseed",
-        sources=["cymseed3/libmseed.pyx"] + libmseed_sources,
-        include_dirs=[libmseed_dir, "cymseed3"],  # Include directory for C headers and pxd
-        extra_compile_args=['-std=c99'],
-        extra_link_args=[],  # Add additional linker flags if necessary
+        name="cymseed3",
+        sources=["cymseed3.pyx"] + libmseed_sources,
+        include_dirs=include_dirs,
+        extra_compile_args=extra_compile_args,
+        extra_link_args=extra_link_args,
     )
 ]
 
 setup(
     name="cymseed3",
     version="0.1.0",
-    description="A Python package for reading and writing miniseed files using libmseed.",
+    description="A Python package for reading and writing miniseed files using libmseed 3.",
     long_description=long_description,
     long_description_content_type='text/markdown',
-    author="Your Name",
-    author_email="your.email@example.com",
-    url="https://github.com/your-username/cymseed3",
+    author="Valerio Poggi",
+    author_email="vpoggi@ogs.it",
+    url="https://github.com/shakelab/cymseed3",
     license="GPLv3",
     ext_modules=cythonize(ext_modules),
     classifiers=[
@@ -76,3 +83,4 @@ setup(
     keywords='miniseed libmseed seismic data processing',
     zip_safe=False
 )
+

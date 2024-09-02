@@ -1,6 +1,6 @@
 import os
 import pytest
-from cymseed3 import libmseed
+from cymseed3 import MiniSeed
 
 # Path to the directory containing example MiniSEED files
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
@@ -9,7 +9,7 @@ DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 @pytest.fixture
 def miniseed():
     """Fixture for initializing and freeing MiniSeed object."""
-    ms = libmseed.MiniSeed()
+    ms = MiniSeed()
     yield ms
     del ms
 

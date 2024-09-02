@@ -18,7 +18,7 @@
 #
 # ****************************************************************************
 
-# libmseed.pxd
+# cymseed3.pxd
 # cython: language_level=3
 
 cdef extern from "stdint.h":

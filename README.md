@@ -36,10 +36,10 @@
  Here’s an example of how to use `cymseed3` to create, write, read, and export MiniSEED data:
 
  ```python
- from cymseed3 import libmseed
+ from cymseed3 import MiniSeed
 
  # Initialise a Miniseed object
- ms = libmseed.MiniSeed()
+ ms = MiniSeed()
 
  record_dict = {
      'network' : 'OX',

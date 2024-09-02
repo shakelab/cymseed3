@@ -41,10 +41,10 @@ Note on Encoding:
     32 -> [Legacy] DWWSSN 16-bit gain ranged
 """
 
-# libmseed.pyx
+# cymseed3.pyx
 # cython: language_level=3
 
-cimport libmseed
+cimport cymseed3
 from cython.operator import dereference
 
 from libc.string cimport memset, memcpy
