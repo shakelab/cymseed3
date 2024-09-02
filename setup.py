@@ -52,7 +52,7 @@ ext_modules = [
 
 setup(
     name="cymseed3",
-    version="0.1.0",
+    version="0.0.5",
     description="A Python package for reading and writing miniseed files using libmseed 3.",
     long_description=long_description,
     long_description_content_type='text/markdown',

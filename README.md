@@ -11,23 +11,45 @@
 
  ## Installation
 
- ### Prerequisites
+### Prerequisites
 
- Ensure you have Python 3.6 or higher installed. Additionally, you'll need `setuptools`, `wheel`, and `cython` for building the package:
+Ensure you have Python 3.6 or higher installed. Additionally, you'll need `setuptools`, `wheel`, and `cython` for building the package if you are installing from source.
 
- ```bash
- pip install setuptools wheel cython
- ```
+### Installing cymseed3 from PyPI
 
- ### Installing cymseed3
+The easiest way to install `cymseed3` is via [PyPI](https://pypi.org/project/cymseed3/), using `pip`. This will download and install the latest version of the package, including all dependencies.
 
- You can install `cymseed3` directly from the source using pip. Clone the repository and run the installation command:
+```bash
+pip install cymseed3
+```
 
- ```bash
- git clone https://github.com/shakelab/cymseed3.git
- cd cymseed3
- pip install .
- ```
+This command will automatically handle the installation of all required dependencies, making it the preferred method for most users.
+
+### Installing cymseed3 from Source
+
+If you want to install `cymseed3` from source, for example, to modify the code or contribute to development, follow these steps:
+
+1. **Clone the Repository**: Start by cloning the repository from GitHub.
+
+  ```bash
+  git clone https://github.com/shakelab/cymseed3.git
+  cd cymseed3
+  ```
+
+2. **Install Dependencies**: Make sure to install necessary build tools and dependencies:
+
+  ```bash
+  pip install setuptools wheel cython
+  ```
+
+3. **Build and Install Locally**: Use the following commands to compile Cython extensions and install the package in editable mode:
+
+  ```bash
+  python3 setup.py build_ext --inplace
+  pip install -e .
+  ```
+
+  This approach allows you to make changes to the source code and have them immediately available without reinstalling the package.
 
  ## Usage
 
