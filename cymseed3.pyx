@@ -201,7 +201,7 @@ cdef class MiniSeed:
                    int8_t verbose=0):
         """
         Read and parse MiniSEED data from a byte stream.
-
+    
         Parameters:
             byte_stream (bytes): The MiniSEED data to be parsed.
             flags (uint32_t): Flags to control parsing behavior.
@@ -209,49 +209,55 @@ cdef class MiniSeed:
         """
         cdef MS3Record* msr
         cdef MS3RecordPtr* ptr
-
+    
         cdef uint64_t bufferlength = len(byte_stream)
         cdef uint64_t offset = 0
-
+    
         cdef int8_t splitversion = 0
         cdef int parsevalue
-
-        # Set flags for validation, unpacking, and record listing
+        cdef uint64_t reclen
+    
         flags |= MSF_VALIDATECRC
         flags |= MSF_UNPACKDATA
         flags |= MSF_SKIPNOTDATA
         flags |= MSF_RECORDLIST
-
-        # Parse through the byte stream, creating and adding MS3Records
+    
         while int(bufferlength - offset) > int(MINRECLEN):
-
+    
             msr = msr3_init(NULL)
             if not msr:
                 raise MemoryError("Failed to allocate memory for MS3Record")
-
+    
             parsevalue = msr3_parse(byte_stream[offset:],
-                                    bufferlength,
+                                    bufferlength - offset,
                                     &msr,
                                     flags,
                                     verbose)
-
-            # Verbose logging of parsed record details
+    
+            if parsevalue < 0:
+                print(
+                    f"Warning: Error parsing MiniSEED record ",
+                    f"at offset {offset}"
+                )
+                msr3_free(&msr)
+    
+                # Prova a incrementare offset di una lunghezza tipica
+                # (p.es. 256, 512 o MINRECLEN), oppure scorri byte per byte
+                offset += MINRECLEN
+                continue
+    
+            if parsevalue > 0:
+                break
+    
+            # Stampa info se richiesto
             if verbose > 0:
                 iso_starttime = convert_nstime_to_timestr(msr.starttime)
                 strout = f"SID: {msr.sid.decode('utf-8')}, "
                 strout += f"Start Time: {iso_starttime}, "
                 strout += f"Sample Count: {msr.samplecnt}"
                 print(strout)
-
-            if parsevalue < 0:
-                if msr:
-                    msr3_free(&msr)
-                raise RuntimeError(f"Error parsing MiniSEED data")
-
-            if parsevalue > 0:
-                break
-
-            # Add the parsed MS3Record to the trace list
+    
+            # Aggiungi alla trace list
             mstl3_addmsr_recordptr(self.mstl,
                                    msr,
                                    &ptr,
@@ -259,8 +265,10 @@ cdef class MiniSeed:
                                    1,
                                    flags,
                                    NULL)
-
-            offset += msr.reclen
+    
+            reclen = msr.reclen
+            msr3_free(&msr)
+            offset += reclen
 
     def write(self, int msformat=2,
                     int reclen=512,
