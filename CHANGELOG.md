@@ -25,10 +25,16 @@ Version 0.2.0 rewrites the interface; it is not compatible with 0.1.x.
 - `MiniSeedError` (a `ValueError`) and `MiniSeedWarning` (a
   `UserWarning`); the messages of libmseed are issued as warnings with
   the offset of the record.
-- Tests against the libmseed file readers on the libmseed test files.
+- Tests against the libmseed file readers on the 46 libmseed test
+  files.
 
 ### Changed
 
+- The bundled libmseed is updated from 3.1.3 to 3.5.4 (fixes in
+  MiniSEED 2 time encoding when writing, blockette 1001 and 100,
+  robustness of the parser); the C sources are compiled with the
+  default C standard of the compiler, as by libmseed (`-std=c99` hid
+  `ftello`/`fseeko`).
 - Samples are returned as `array.array` in their native type (int32,
   float32, float64) and text as `bytes`, instead of Python lists.
 - Times are integer nanoseconds instead of ISO strings with
@@ -53,7 +59,7 @@ Version 0.2.0 rewrites the interface; it is not compatible with 0.1.x.
 - Source identifiers with codes longer than 9 characters overflowed a
   stack buffer.
 - The validation of MiniSEED 3 CRCs no longer writes into the input
-  buffer (libmseed zeroes the CRC field in place: a crash on read-only
-  `mmap`).
+  buffer (libmseed 3.1.3 zeroed the CRC field in place: a crash on
+  read-only `mmap`).
 - The last MiniSEED 2 record of a buffer without blockette 1000 is read
   (as libmseed does at the end of a file).

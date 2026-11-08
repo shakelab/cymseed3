@@ -271,11 +271,12 @@ def test_invalid_crc():
     content = bytearray(STEIM2_V3.read_bytes())
     first = next(iter_records(STEIM2_V3))
     content[first.reclen - 1] ^= 0xFF
-    with pytest.warns(MiniSeedWarning, match="invalid CRC"):
+    with pytest.warns(MiniSeedWarning, match="invalid record at offset 0 "
+                                             r"skipped \(507 bytes\): .*CRC"):
         records = list(iter_records(content))
     assert len(records) == 3
     assert records[0].offset == first.reclen
-    with pytest.warns(MiniSeedWarning, match="invalid CRC"):
+    with pytest.warns(MiniSeedWarning, match="CRC is invalid"):
         assert MiniSeed().read(content) == 3
     with warnings.catch_warnings():
         warnings.simplefilter("error")
@@ -325,10 +326,15 @@ def test_libmseed_messages():
         MiniSeed().read(path)
     texts = [str(w.message) for w in caught
              if issubclass(w.category, MiniSeedWarning)]
-    assert len(texts) == 5
-    assert any(t.startswith("record at offset 0: ") and "Steim1 failed" in t
-               for t in texts)
-    assert texts[-1].startswith("record at offset 1024: ")
+    assert texts == [
+        "invalid record at offset 0 skipped (512 bytes): "
+        "FDSN:IU_COLA_00_L_H_Z: Blockette offset (40) is within the fixed "
+        "header, impossible",
+        "record at offset 512: FDSN:IU_COLA_00_L_H_Z: Offset to next "
+        "blockette (40) is within current blockette ending at byte 64",
+        "record at offset 1024: FDSN:IU_COLA_00_L_H_Z: Offset to next "
+        "blockette (1000) from type 1001 is beyond record length",
+    ]
 
 
 def test_detection_record():

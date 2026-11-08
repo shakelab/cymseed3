@@ -3,7 +3,7 @@ from Cython.Build import cythonize
 import os
 
 # Directory of the C library
-libmseed_dir = os.path.join('earthscope', 'libmseed-3.1.3')
+libmseed_dir = os.path.join('earthscope', 'libmseed-3.5.4')
 
 # Read the README file for the long description
 long_description = ""
@@ -33,7 +33,7 @@ libmseed_sources = [
 ]
 
 # Compiler and linker flags
-extra_compile_args = ['-std=c99', '-O2', '-Wall', '-DLIBMSEED_STATIC']
+extra_compile_args = ['-O2', '-Wall', '-DLIBMSEED_STATIC']
 extra_link_args = ['-lm']
 
 # Include directories

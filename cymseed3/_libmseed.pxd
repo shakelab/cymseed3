@@ -41,6 +41,7 @@ cdef extern from "libmseed.h" nogil:
     int MS_GENERROR
 
     uint32_t MSF_UNPACKDATA
+    uint32_t MSF_VALIDATECRC
     uint32_t MSF_ATENDOFFILE
 
     ctypedef enum ms_timeformat_t:
@@ -104,7 +105,6 @@ cdef extern from "libmseed.h" nogil:
     int64_t ms3_detect(const char *record, uint64_t recbuflen,
                        uint8_t *formatversion)
     double msr3_sampratehz(const MS3Record *msr)
-    uint32_t ms_crc32c(const uint8_t *data, int length, uint32_t previous)
     nstime_t msr3_endtime(const MS3Record *msr)
 
     # -- trace lists ----------------------------------------------------
@@ -118,13 +118,15 @@ cdef extern from "libmseed.h" nogil:
 
     # -- identifiers and times ------------------------------------------
 
-    int ms_sid2nslc(const char *sid, char *net, char *sta, char *loc,
-                    char *chan)
+    int ms_sid2nslc_n(const char *sid, char *net, size_t netsize, char *sta,
+                      size_t stasize, char *loc, size_t locsize, char *chan,
+                      size_t chansize)
     int ms_nslc2sid(char *sid, int sidlen, uint16_t flags, const char *net,
                     const char *sta, const char *loc, const char *chan)
-    char *ms_nstime2timestr(nstime_t nstime, char *timestr,
-                            ms_timeformat_t timeformat,
-                            ms_subseconds_t subsecond)
+    char *ms_nstime2timestr_n(nstime_t nstime, char *timestr,
+                              size_t timestrsize,
+                              ms_timeformat_t timeformat,
+                              ms_subseconds_t subsecond)
     nstime_t ms_timestr2nstime(const char *timestr)
 
     # -- logging --------------------------------------------------------

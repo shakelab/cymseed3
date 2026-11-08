@@ -1,6 +1,6 @@
 # CyMSeed3
 
- `cymseed3` is a Python package for reading and writing MiniSEED files using the `libmseed` library Version 3 (currently 3.1.3). This package provides a simple and efficient interface for handling seismic data in the MiniSEED format, making it easy to import, export, and manipulate seismic records.
+ `cymseed3` is a Python package for reading and writing MiniSEED files using the `libmseed` library version 3 (currently 3.5.4). This package provides a simple and efficient interface for handling seismic data in the MiniSEED format, making it easy to import, export, and manipulate seismic records.
 
  ## Features
 

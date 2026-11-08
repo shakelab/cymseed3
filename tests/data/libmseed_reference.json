@@ -1,5 +1,5 @@
 {
- "source": "libmseed 3.1.3 (ms3_readtracelist, ms3_readmsr_r)",
+ "source": "libmseed 3.5.4 (ms3_readtracelist, ms3_readmsr_r)",
  "hash": "sha256 of the samples (int32, float32 or float64 little-endian; text as bytes)",
  "files": {
   "reference-testdata-defaults.mseed2": {
@@ -12,7 +12,7 @@
      "rate": 40.0,
      "sampletype": "i",
      "samplecnt": 499,
-     "sha256": "2396fe006794fc0ff29ea3a74a89aea01e049241e7f5723edf981c989bb01b22"
+     "sha256": "76e241298c04a0c5692b75346150654be0a19e8b442ec16077ba7d664ccf2262"
     }
    ],
    "records": [
@@ -42,7 +42,7 @@
      "rate": 40.0,
      "sampletype": "i",
      "samplecnt": 499,
-     "sha256": "2396fe006794fc0ff29ea3a74a89aea01e049241e7f5723edf981c989bb01b22"
+     "sha256": "76e241298c04a0c5692b75346150654be0a19e8b442ec16077ba7d664ccf2262"
     }
    ],
    "records": [
@@ -57,7 +57,7 @@
      "encoding": 11,
      "pubversion": 1,
      "samplecnt": 499,
-     "crc": 2829048415,
+     "crc": 2314948595,
      "extra": {}
     }
    ]
@@ -244,7 +244,7 @@
      "rate": 40.0,
      "sampletype": "d",
      "samplecnt": 500,
-     "sha256": "724cb3c5ae28b311c05f95c3cb850180db909a9f334fb1d02e951c6118637fbb"
+     "sha256": "7fd4681c1e3182709dd446ba421ecaabfad9f1fe450581617940fc05024b51d7"
     }
    ],
    "records": [
@@ -386,7 +386,7 @@
      "rate": 40.0,
      "sampletype": "d",
      "samplecnt": 500,
-     "sha256": "724cb3c5ae28b311c05f95c3cb850180db909a9f334fb1d02e951c6118637fbb"
+     "sha256": "7fd4681c1e3182709dd446ba421ecaabfad9f1fe450581617940fc05024b51d7"
     }
    ],
    "records": [
@@ -401,7 +401,7 @@
      "encoding": 5,
      "pubversion": 1,
      "samplecnt": 56,
-     "crc": 2611962576,
+     "crc": 1102554311,
      "extra": {}
     },
     {
@@ -415,7 +415,7 @@
      "encoding": 5,
      "pubversion": 1,
      "samplecnt": 56,
-     "crc": 3124995980,
+     "crc": 3212889895,
      "extra": {}
     },
     {
@@ -429,7 +429,7 @@
      "encoding": 5,
      "pubversion": 1,
      "samplecnt": 56,
-     "crc": 1195064539,
+     "crc": 1411981200,
      "extra": {}
     },
     {
@@ -443,7 +443,7 @@
      "encoding": 5,
      "pubversion": 1,
      "samplecnt": 56,
-     "crc": 2231541199,
+     "crc": 4255948560,
      "extra": {}
     },
     {
@@ -457,7 +457,7 @@
      "encoding": 5,
      "pubversion": 1,
      "samplecnt": 56,
-     "crc": 3227919984,
+     "crc": 2704584765,
      "extra": {}
     },
     {
@@ -471,7 +471,7 @@
      "encoding": 5,
      "pubversion": 1,
      "samplecnt": 56,
-     "crc": 499048813,
+     "crc": 3942590484,
      "extra": {}
     },
     {
@@ -485,7 +485,7 @@
      "encoding": 5,
      "pubversion": 1,
      "samplecnt": 56,
-     "crc": 3701306274,
+     "crc": 2981210662,
      "extra": {}
     },
     {
@@ -499,7 +499,7 @@
      "encoding": 5,
      "pubversion": 1,
      "samplecnt": 56,
-     "crc": 548199104,
+     "crc": 3232554320,
      "extra": {}
     },
     {
@@ -513,8 +513,214 @@
      "encoding": 5,
      "pubversion": 1,
      "samplecnt": 52,
-     "crc": 555184481,
+     "crc": 571633779,
      "extra": {}
+    }
+   ]
+  },
+  "reference-testdata-flushidle.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800123457000,
+     "end_ns": 1336780812598457000,
+     "rate": 40.0,
+     "sampletype": "i",
+     "samplecnt": 500,
+     "sha256": "4588823bfddac029491c4ab5e07f35c1daf8ad591f6aef7a2c500d221624feca"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 4096,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800123457000,
+     "end_ns": 1336780812598457000,
+     "rate": 40.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 500,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    }
+   ]
+  },
+  "reference-testdata-flushidle.mseed3": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__H_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800123456789,
+     "end_ns": 1336780805113456789,
+     "rate": 100.0,
+     "sampletype": "i",
+     "samplecnt": 500,
+     "sha256": "4588823bfddac029491c4ab5e07f35c1daf8ad591f6aef7a2c500d221624feca"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 1595,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__H_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800123456789,
+     "end_ns": 1336780805113456789,
+     "rate": 100.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 500,
+     "crc": 3137694379,
+     "extra": {}
+    }
+   ]
+  },
+  "reference-testdata-headeronly.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__S_O_H",
+     "pubversion": 1,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780800000000000,
+     "rate": 0.0,
+     "sampletype": "-",
+     "samplecnt": 0,
+     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 4096,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__S_O_H",
+     "flags": 0,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780800000000000,
+     "rate": 0.0,
+     "encoding": 0,
+     "pubversion": 1,
+     "samplecnt": 0,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Exception": [
+         {
+          "Time": "2012-01-13T00:00:00Z",
+          "VCOCorrection": 51.51367,
+          "ReceptionQuality": 0,
+          "Count": 6829,
+          "Type": "Daily Timemark",
+          "ClockStatus": "SNR=48,49,48,47,51,48,51,50,47,48,46"
+         },
+         {
+          "Time": "2012-01-13T00:03:16.000001Z",
+          "VCOCorrection": 51.51367,
+          "ReceptionQuality": 0,
+          "Count": 196,
+          "Type": "UnExp Timemark",
+          "ClockStatus": "Jump of -0.999999 Seconds"
+         },
+         {
+          "Time": "2012-01-13T00:03:36.000004Z",
+          "VCOCorrection": 51.51367,
+          "ReceptionQuality": 90,
+          "Count": 21,
+          "Type": "Valid Timemark",
+          "ClockStatus": "SNR=47,50,47,49,50,48,52,49,48,46,46"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "P273T11N16"
+       }
+      }
+     }
+    }
+   ]
+  },
+  "reference-testdata-headeronly.mseed3": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__S_O_H",
+     "pubversion": 1,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780800000000000,
+     "rate": 0.0,
+     "sampletype": "-",
+     "samplecnt": 0,
+     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 789,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__S_O_H",
+     "flags": 0,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780800000000000,
+     "rate": 0.0,
+     "encoding": 0,
+     "pubversion": 1,
+     "samplecnt": 0,
+     "crc": 3257037737,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Exception": [
+         {
+          "Time": "2012-01-13T00:00:00Z",
+          "VCOCorrection": 51.51367,
+          "ReceptionQuality": 0,
+          "Count": 6829,
+          "Type": "Daily Timemark",
+          "ClockStatus": "SNR=48,49,48,47,51,48,51,50,47,48,46"
+         },
+         {
+          "Time": "2012-01-13T00:03:16.000001Z",
+          "VCOCorrection": 51.51367,
+          "ReceptionQuality": 0,
+          "Count": 196,
+          "Type": "UnExp Timemark",
+          "ClockStatus": "Jump of -0.999999 Seconds"
+         },
+         {
+          "Time": "2012-01-13T00:03:36.000004Z",
+          "VCOCorrection": 51.51367,
+          "ReceptionQuality": 90,
+          "Count": 21,
+          "Type": "Valid Timemark",
+          "ClockStatus": "SNR=47,50,47,49,50,48,52,49,48,46,46"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "P273T11N16"
+       }
+      },
+      "Manufacturer123": {
+       "Metadata": {
+        "FilamentCurrent": 16.4,
+        "HyperCoordinates": "1.1789:965402:73324@3.14159"
+       }
+      },
+      "OperatorXYZ": {
+       "DSP": {
+        "PeakRMS": 2067,
+        "RMSWindow": 10.5
+       }
+      }
+     }
     }
    ]
   },
@@ -528,7 +734,7 @@
      "rate": 40.0,
      "sampletype": "i",
      "samplecnt": 220,
-     "sha256": "9c0a44ead082a412469e69e3b61d434e355011472f04c54fdba33f90e52e5824"
+     "sha256": "e5e1d9115f45a5005a09e77b1726a15ddd5c6ba9db7b42c063e625bcabd0abe1"
     }
    ],
    "records": [
@@ -558,7 +764,7 @@
      "rate": 40.0,
      "sampletype": "i",
      "samplecnt": 220,
-     "sha256": "9c0a44ead082a412469e69e3b61d434e355011472f04c54fdba33f90e52e5824"
+     "sha256": "e5e1d9115f45a5005a09e77b1726a15ddd5c6ba9db7b42c063e625bcabd0abe1"
     }
    ],
    "records": [
@@ -573,7 +779,7 @@
      "encoding": 1,
      "pubversion": 1,
      "samplecnt": 220,
-     "crc": 3491876382,
+     "crc": 1785597072,
      "extra": {}
     }
    ]
@@ -588,7 +794,7 @@
      "rate": 40.0,
      "sampletype": "i",
      "samplecnt": 500,
-     "sha256": "57325adaeb550e8853c6540d7e3f502b052ecdc6b9048ac9662d5f51b46645c4"
+     "sha256": "4588823bfddac029491c4ab5e07f35c1daf8ad591f6aef7a2c500d221624feca"
     }
    ],
    "records": [
@@ -674,7 +880,7 @@
      "rate": 40.0,
      "sampletype": "i",
      "samplecnt": 500,
-     "sha256": "57325adaeb550e8853c6540d7e3f502b052ecdc6b9048ac9662d5f51b46645c4"
+     "sha256": "4588823bfddac029491c4ab5e07f35c1daf8ad591f6aef7a2c500d221624feca"
     }
    ],
    "records": [
@@ -703,7 +909,7 @@
      "encoding": 3,
      "pubversion": 1,
      "samplecnt": 113,
-     "crc": 343512849,
+     "crc": 766125447,
      "extra": {}
     },
     {
@@ -717,7 +923,7 @@
      "encoding": 3,
      "pubversion": 1,
      "samplecnt": 113,
-     "crc": 2702853883,
+     "crc": 3364391001,
      "extra": {}
     },
     {
@@ -731,7 +937,7 @@
      "encoding": 3,
      "pubversion": 1,
      "samplecnt": 113,
-     "crc": 3792333515,
+     "crc": 3576916557,
      "extra": {}
     },
     {
@@ -745,22 +951,364 @@
      "encoding": 3,
      "pubversion": 1,
      "samplecnt": 48,
-     "crc": 4157028086,
+     "crc": 2418633857,
      "extra": {}
     }
    ]
   },
-  "reference-testdata-steim1-LE.mseed2": {
+  "reference-testdata-mstlpack-rollingbuffer-next.mseed": {
    "segments": [
     {
      "sid": "FDSN:XX_TEST__B_H_Z",
-     "pubversion": 2,
-     "start_ns": 1325376000000000000,
-     "end_ns": 1325376012475000000,
+     "pubversion": 1,
+     "start_ns": 1336780800123456789,
+     "end_ns": 1336780812598456789,
      "rate": 40.0,
      "sampletype": "i",
      "samplecnt": 500,
-     "sha256": "57325adaeb550e8853c6540d7e3f502b052ecdc6b9048ac9662d5f51b46645c4"
+     "sha256": "620d58d0a5045d44844885abc8fe9c3b83930bd09b341cb9f32b094ad0018759"
+    },
+    {
+     "sid": "FDSN:XX_TEST__H_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800123456789,
+     "end_ns": 1336780805113456789,
+     "rate": 100.0,
+     "sampletype": "i",
+     "samplecnt": 500,
+     "sha256": "620d58d0a5045d44844885abc8fe9c3b83930bd09b341cb9f32b094ad0018759"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800123456789,
+     "end_ns": 1336780802923456789,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 3601955425,
+     "extra": {}
+    },
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780802948456789,
+     "end_ns": 1336780805748456789,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 794307863,
+     "extra": {}
+    },
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__H_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800123456789,
+     "end_ns": 1336780801243456789,
+     "rate": 100.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 3970542126,
+     "extra": {}
+    },
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__H_H_Z",
+     "flags": 0,
+     "start_ns": 1336780801253456789,
+     "end_ns": 1336780802373456789,
+     "rate": 100.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 1509903259,
+     "extra": {}
+    },
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__H_H_Z",
+     "flags": 0,
+     "start_ns": 1336780802383456789,
+     "end_ns": 1336780803503456789,
+     "rate": 100.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 1413959524,
+     "extra": {}
+    },
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__H_H_Z",
+     "flags": 0,
+     "start_ns": 1336780803513456789,
+     "end_ns": 1336780804633456789,
+     "rate": 100.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 2574485242,
+     "extra": {}
+    },
+    {
+     "reclen": 251,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__H_H_Z",
+     "flags": 0,
+     "start_ns": 1336780804643456789,
+     "end_ns": 1336780805113456789,
+     "rate": 100.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 48,
+     "crc": 578763715,
+     "extra": {}
+    },
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780805773456789,
+     "end_ns": 1336780808573456789,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 3120289335,
+     "extra": {}
+    },
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780808598456789,
+     "end_ns": 1336780811398456789,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 275792831,
+     "extra": {}
+    },
+    {
+     "reclen": 251,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780811423456789,
+     "end_ns": 1336780812598456789,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 48,
+     "crc": 3740790511,
+     "extra": {}
+    }
+   ]
+  },
+  "reference-testdata-mstlpack-rollingbuffer.mseed": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800123456789,
+     "end_ns": 1336780812598456789,
+     "rate": 40.0,
+     "sampletype": "i",
+     "samplecnt": 500,
+     "sha256": "620d58d0a5045d44844885abc8fe9c3b83930bd09b341cb9f32b094ad0018759"
+    },
+    {
+     "sid": "FDSN:XX_TEST__H_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800123456789,
+     "end_ns": 1336780805113456789,
+     "rate": 100.0,
+     "sampletype": "i",
+     "samplecnt": 500,
+     "sha256": "620d58d0a5045d44844885abc8fe9c3b83930bd09b341cb9f32b094ad0018759"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800123456789,
+     "end_ns": 1336780802923456789,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 3601955425,
+     "extra": {}
+    },
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780802948456789,
+     "end_ns": 1336780805748456789,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 794307863,
+     "extra": {}
+    },
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__H_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800123456789,
+     "end_ns": 1336780801243456789,
+     "rate": 100.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 3970542126,
+     "extra": {}
+    },
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__H_H_Z",
+     "flags": 0,
+     "start_ns": 1336780801253456789,
+     "end_ns": 1336780802373456789,
+     "rate": 100.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 1509903259,
+     "extra": {}
+    },
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780805773456789,
+     "end_ns": 1336780808573456789,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 3120289335,
+     "extra": {}
+    },
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780808598456789,
+     "end_ns": 1336780811398456789,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 275792831,
+     "extra": {}
+    },
+    {
+     "reclen": 251,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780811423456789,
+     "end_ns": 1336780812598456789,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 48,
+     "crc": 3740790511,
+     "extra": {}
+    },
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__H_H_Z",
+     "flags": 0,
+     "start_ns": 1336780802383456789,
+     "end_ns": 1336780803503456789,
+     "rate": 100.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 1413959524,
+     "extra": {}
+    },
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__H_H_Z",
+     "flags": 0,
+     "start_ns": 1336780803513456789,
+     "end_ns": 1336780804633456789,
+     "rate": 100.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 2574485242,
+     "extra": {}
+    },
+    {
+     "reclen": 251,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__H_H_Z",
+     "flags": 0,
+     "start_ns": 1336780804643456789,
+     "end_ns": 1336780805113456789,
+     "rate": 100.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 48,
+     "crc": 578763715,
+     "extra": {}
+    }
+   ]
+  },
+  "reference-testdata-mstlpack.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800123457000,
+     "end_ns": 1336780812598457000,
+     "rate": 40.0,
+     "sampletype": "i",
+     "samplecnt": 500,
+     "sha256": "4588823bfddac029491c4ab5e07f35c1daf8ad591f6aef7a2c500d221624feca"
+    },
+    {
+     "sid": "FDSN:XX_TEST__H_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800123457000,
+     "end_ns": 1336780805113457000,
+     "rate": 100.0,
+     "sampletype": "i",
+     "samplecnt": 500,
+     "sha256": "4588823bfddac029491c4ab5e07f35c1daf8ad591f6aef7a2c500d221624feca"
     }
    ],
    "records": [
@@ -769,11 +1317,1401 @@
      "format_version": 2,
      "sid": "FDSN:XX_TEST__B_H_Z",
      "flags": 0,
-     "start_ns": 1325376000000000000,
-     "end_ns": 1325376006075000000,
+     "start_ns": 1336780800123457000,
+     "end_ns": 1336780806198457000,
      "rate": 40.0,
      "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 244,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780806223457000,
+     "end_ns": 1336780808848457000,
+     "rate": 40.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 106,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780808873457000,
+     "end_ns": 1336780811423457000,
+     "rate": 40.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780811448457000,
+     "end_ns": 1336780812598457000,
+     "rate": 40.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 47,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__H_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800123457000,
+     "end_ns": 1336780802553457000,
+     "rate": 100.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 244,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__H_H_Z",
+     "flags": 0,
+     "start_ns": 1336780802563457000,
+     "end_ns": 1336780803613457000,
+     "rate": 100.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 106,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__H_H_Z",
+     "flags": 0,
+     "start_ns": 1336780803623457000,
+     "end_ns": 1336780804643457000,
+     "rate": 100.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__H_H_Z",
+     "flags": 0,
+     "start_ns": 1336780804653457000,
+     "end_ns": 1336780805113457000,
+     "rate": 100.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 47,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    }
+   ]
+  },
+  "reference-testdata-mstlpack.mseed3": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800123456789,
+     "end_ns": 1336780812598456789,
+     "rate": 40.0,
+     "sampletype": "i",
+     "samplecnt": 500,
+     "sha256": "4588823bfddac029491c4ab5e07f35c1daf8ad591f6aef7a2c500d221624feca"
+    },
+    {
+     "sid": "FDSN:XX_TEST__H_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800123456789,
+     "end_ns": 1336780805113456789,
+     "rate": 100.0,
+     "sampletype": "i",
+     "samplecnt": 500,
+     "sha256": "4588823bfddac029491c4ab5e07f35c1daf8ad591f6aef7a2c500d221624feca"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 507,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800123456789,
+     "end_ns": 1336780806198456789,
+     "rate": 40.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 244,
+     "crc": 3892396654,
+     "extra": {}
+    },
+    {
+     "reclen": 507,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780806223456789,
+     "end_ns": 1336780808848456789,
+     "rate": 40.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 106,
+     "crc": 1407191735,
+     "extra": {}
+    },
+    {
+     "reclen": 507,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780808873456789,
+     "end_ns": 1336780811423456789,
+     "rate": 40.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 103,
+     "crc": 4084956055,
+     "extra": {}
+    },
+    {
+     "reclen": 315,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780811448456789,
+     "end_ns": 1336780812598456789,
+     "rate": 40.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 47,
+     "crc": 3897217866,
+     "extra": {}
+    },
+    {
+     "reclen": 507,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__H_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800123456789,
+     "end_ns": 1336780802553456789,
+     "rate": 100.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 244,
+     "crc": 943773936,
+     "extra": {}
+    },
+    {
+     "reclen": 507,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__H_H_Z",
+     "flags": 0,
+     "start_ns": 1336780802563456789,
+     "end_ns": 1336780803613456789,
+     "rate": 100.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 106,
+     "crc": 3391148443,
+     "extra": {}
+    },
+    {
+     "reclen": 507,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__H_H_Z",
+     "flags": 0,
+     "start_ns": 1336780803623456789,
+     "end_ns": 1336780804643456789,
+     "rate": 100.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 103,
+     "crc": 879390868,
+     "extra": {}
+    },
+    {
+     "reclen": 315,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__H_H_Z",
+     "flags": 0,
+     "start_ns": 1336780804653456789,
+     "end_ns": 1336780805113456789,
+     "rate": 100.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 47,
+     "crc": 3069008360,
+     "extra": {}
+    }
+   ]
+  },
+  "reference-testdata-nsec.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800123457000,
+     "end_ns": 1336780812598457000,
+     "rate": 40.0,
+     "sampletype": "i",
+     "samplecnt": 500,
+     "sha256": "4588823bfddac029491c4ab5e07f35c1daf8ad591f6aef7a2c500d221624feca"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800123457000,
+     "end_ns": 1336780801648457000,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 62,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0,
+        "Exception": [
+         {
+          "Time": "2012-05-12T00:00:26.987654Z",
+          "VCOCorrection": 50.708008,
+          "ReceptionQuality": 100,
+          "Count": 7654,
+          "Type": "Valid",
+          "ClockStatus": "Drift=-1973usec, Satellite SNR in dB=23, 0, 26, 25, 29, 28"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "Acme Corporation GPS3"
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780801673457000,
+     "end_ns": 1336780803198457000,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 62,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0,
+        "Exception": [
+         {
+          "Time": "2012-05-12T00:00:26.987654Z",
+          "VCOCorrection": 50.708008,
+          "ReceptionQuality": 100,
+          "Count": 7654,
+          "Type": "Valid",
+          "ClockStatus": "Drift=-1973usec, Satellite SNR in dB=23, 0, 26, 25, 29, 28"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "Acme Corporation GPS3"
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780803223457000,
+     "end_ns": 1336780804748457000,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 62,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0,
+        "Exception": [
+         {
+          "Time": "2012-05-12T00:00:26.987654Z",
+          "VCOCorrection": 50.708008,
+          "ReceptionQuality": 100,
+          "Count": 7654,
+          "Type": "Valid",
+          "ClockStatus": "Drift=-1973usec, Satellite SNR in dB=23, 0, 26, 25, 29, 28"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "Acme Corporation GPS3"
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780804773457000,
+     "end_ns": 1336780806298457000,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 62,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0,
+        "Exception": [
+         {
+          "Time": "2012-05-12T00:00:26.987654Z",
+          "VCOCorrection": 50.708008,
+          "ReceptionQuality": 100,
+          "Count": 7654,
+          "Type": "Valid",
+          "ClockStatus": "Drift=-1973usec, Satellite SNR in dB=23, 0, 26, 25, 29, 28"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "Acme Corporation GPS3"
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780806323457000,
+     "end_ns": 1336780807848457000,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 62,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0,
+        "Exception": [
+         {
+          "Time": "2012-05-12T00:00:26.987654Z",
+          "VCOCorrection": 50.708008,
+          "ReceptionQuality": 100,
+          "Count": 7654,
+          "Type": "Valid",
+          "ClockStatus": "Drift=-1973usec, Satellite SNR in dB=23, 0, 26, 25, 29, 28"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "Acme Corporation GPS3"
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780807873457000,
+     "end_ns": 1336780809398457000,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 62,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0,
+        "Exception": [
+         {
+          "Time": "2012-05-12T00:00:26.987654Z",
+          "VCOCorrection": 50.708008,
+          "ReceptionQuality": 100,
+          "Count": 7654,
+          "Type": "Valid",
+          "ClockStatus": "Drift=-1973usec, Satellite SNR in dB=23, 0, 26, 25, 29, 28"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "Acme Corporation GPS3"
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780809423457000,
+     "end_ns": 1336780810948457000,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 62,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0,
+        "Exception": [
+         {
+          "Time": "2012-05-12T00:00:26.987654Z",
+          "VCOCorrection": 50.708008,
+          "ReceptionQuality": 100,
+          "Count": 7654,
+          "Type": "Valid",
+          "ClockStatus": "Drift=-1973usec, Satellite SNR in dB=23, 0, 26, 25, 29, 28"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "Acme Corporation GPS3"
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780810973457000,
+     "end_ns": 1336780812498457000,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 62,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0,
+        "Exception": [
+         {
+          "Time": "2012-05-12T00:00:26.987654Z",
+          "VCOCorrection": 50.708008,
+          "ReceptionQuality": 100,
+          "Count": 7654,
+          "Type": "Valid",
+          "ClockStatus": "Drift=-1973usec, Satellite SNR in dB=23, 0, 26, 25, 29, 28"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "Acme Corporation GPS3"
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780812523457000,
+     "end_ns": 1336780812598457000,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 4,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0,
+        "Exception": [
+         {
+          "Time": "2012-05-12T00:00:26.987654Z",
+          "VCOCorrection": 50.708008,
+          "ReceptionQuality": 100,
+          "Count": 7654,
+          "Type": "Valid",
+          "ClockStatus": "Drift=-1973usec, Satellite SNR in dB=23, 0, 26, 25, 29, 28"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "Acme Corporation GPS3"
+       }
+      }
+     }
+    }
+   ]
+  },
+  "reference-testdata-nsec.mseed3": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800123456789,
+     "end_ns": 1336780812598456789,
+     "rate": 40.0,
+     "sampletype": "i",
+     "samplecnt": 500,
+     "sha256": "4588823bfddac029491c4ab5e07f35c1daf8ad591f6aef7a2c500d221624feca"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 512,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800123456789,
+     "end_ns": 1336780801223456789,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 45,
+     "crc": 2891418987,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Exception": [
+         {
+          "Time": "2012-05-12T00:00:26.987654321Z",
+          "VCOCorrection": 50.7080078125,
+          "ReceptionQuality": 100,
+          "Count": 7654,
+          "Type": "Valid",
+          "ClockStatus": "Drift=-1973usec, Satellite SNR in dB=23, 0, 26, 25, 29, 28"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "Acme Corporation GPS3"
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780801248456789,
+     "end_ns": 1336780802348456789,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 45,
+     "crc": 1299537643,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Exception": [
+         {
+          "Time": "2012-05-12T00:00:26.987654321Z",
+          "VCOCorrection": 50.7080078125,
+          "ReceptionQuality": 100,
+          "Count": 7654,
+          "Type": "Valid",
+          "ClockStatus": "Drift=-1973usec, Satellite SNR in dB=23, 0, 26, 25, 29, 28"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "Acme Corporation GPS3"
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780802373456789,
+     "end_ns": 1336780803473456789,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 45,
+     "crc": 2833762635,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Exception": [
+         {
+          "Time": "2012-05-12T00:00:26.987654321Z",
+          "VCOCorrection": 50.7080078125,
+          "ReceptionQuality": 100,
+          "Count": 7654,
+          "Type": "Valid",
+          "ClockStatus": "Drift=-1973usec, Satellite SNR in dB=23, 0, 26, 25, 29, 28"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "Acme Corporation GPS3"
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780803498456789,
+     "end_ns": 1336780804598456789,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 45,
+     "crc": 4293166129,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Exception": [
+         {
+          "Time": "2012-05-12T00:00:26.987654321Z",
+          "VCOCorrection": 50.7080078125,
+          "ReceptionQuality": 100,
+          "Count": 7654,
+          "Type": "Valid",
+          "ClockStatus": "Drift=-1973usec, Satellite SNR in dB=23, 0, 26, 25, 29, 28"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "Acme Corporation GPS3"
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780804623456789,
+     "end_ns": 1336780805723456789,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 45,
+     "crc": 4068410069,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Exception": [
+         {
+          "Time": "2012-05-12T00:00:26.987654321Z",
+          "VCOCorrection": 50.7080078125,
+          "ReceptionQuality": 100,
+          "Count": 7654,
+          "Type": "Valid",
+          "ClockStatus": "Drift=-1973usec, Satellite SNR in dB=23, 0, 26, 25, 29, 28"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "Acme Corporation GPS3"
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780805748456789,
+     "end_ns": 1336780806848456789,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 45,
+     "crc": 1168954747,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Exception": [
+         {
+          "Time": "2012-05-12T00:00:26.987654321Z",
+          "VCOCorrection": 50.7080078125,
+          "ReceptionQuality": 100,
+          "Count": 7654,
+          "Type": "Valid",
+          "ClockStatus": "Drift=-1973usec, Satellite SNR in dB=23, 0, 26, 25, 29, 28"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "Acme Corporation GPS3"
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780806873456789,
+     "end_ns": 1336780807973456789,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 45,
+     "crc": 3576967180,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Exception": [
+         {
+          "Time": "2012-05-12T00:00:26.987654321Z",
+          "VCOCorrection": 50.7080078125,
+          "ReceptionQuality": 100,
+          "Count": 7654,
+          "Type": "Valid",
+          "ClockStatus": "Drift=-1973usec, Satellite SNR in dB=23, 0, 26, 25, 29, 28"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "Acme Corporation GPS3"
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780807998456789,
+     "end_ns": 1336780809098456789,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 45,
+     "crc": 816298481,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Exception": [
+         {
+          "Time": "2012-05-12T00:00:26.987654321Z",
+          "VCOCorrection": 50.7080078125,
+          "ReceptionQuality": 100,
+          "Count": 7654,
+          "Type": "Valid",
+          "ClockStatus": "Drift=-1973usec, Satellite SNR in dB=23, 0, 26, 25, 29, 28"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "Acme Corporation GPS3"
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780809123456789,
+     "end_ns": 1336780810223456789,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 45,
+     "crc": 3908255860,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Exception": [
+         {
+          "Time": "2012-05-12T00:00:26.987654321Z",
+          "VCOCorrection": 50.7080078125,
+          "ReceptionQuality": 100,
+          "Count": 7654,
+          "Type": "Valid",
+          "ClockStatus": "Drift=-1973usec, Satellite SNR in dB=23, 0, 26, 25, 29, 28"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "Acme Corporation GPS3"
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780810248456789,
+     "end_ns": 1336780811348456789,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 45,
+     "crc": 17304751,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Exception": [
+         {
+          "Time": "2012-05-12T00:00:26.987654321Z",
+          "VCOCorrection": 50.7080078125,
+          "ReceptionQuality": 100,
+          "Count": 7654,
+          "Type": "Valid",
+          "ClockStatus": "Drift=-1973usec, Satellite SNR in dB=23, 0, 26, 25, 29, 28"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "Acme Corporation GPS3"
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780811373456789,
+     "end_ns": 1336780812473456789,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 45,
+     "crc": 3149227939,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Exception": [
+         {
+          "Time": "2012-05-12T00:00:26.987654321Z",
+          "VCOCorrection": 50.7080078125,
+          "ReceptionQuality": 100,
+          "Count": 7654,
+          "Type": "Valid",
+          "ClockStatus": "Drift=-1973usec, Satellite SNR in dB=23, 0, 26, 25, 29, 28"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "Acme Corporation GPS3"
+       }
+      }
+     }
+    },
+    {
+     "reclen": 352,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780812498456789,
+     "end_ns": 1336780812598456789,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 5,
+     "crc": 1558388971,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Exception": [
+         {
+          "Time": "2012-05-12T00:00:26.987654321Z",
+          "VCOCorrection": 50.7080078125,
+          "ReceptionQuality": 100,
+          "Count": 7654,
+          "Type": "Valid",
+          "ClockStatus": "Drift=-1973usec, Satellite SNR in dB=23, 0, 26, 25, 29, 28"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "Acme Corporation GPS3"
+       }
+      }
+     }
+    }
+   ]
+  },
+  "reference-testdata-oddrate.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": 1747084284987654000,
+     "end_ns": 1747084285449691222,
+     "rate": 1080.0,
+     "sampletype": "i",
+     "samplecnt": 500,
+     "sha256": "4588823bfddac029491c4ab5e07f35c1daf8ad591f6aef7a2c500d221624feca"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1747084284987654000,
+     "end_ns": 1747084285090431778,
+     "rate": 1080.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 112,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1747084285091358000,
+     "end_ns": 1747084285194135778,
+     "rate": 1080.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 112,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1747084285195062000,
+     "end_ns": 1747084285297839778,
+     "rate": 1080.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 112,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1747084285298765000,
+     "end_ns": 1747084285401542778,
+     "rate": 1080.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 112,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1747084285402469000,
+     "end_ns": 1747084285449691222,
+     "rate": 1080.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 52,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    }
+   ]
+  },
+  "reference-testdata-oddrate.mseed3": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": 1747084284987654321,
+     "end_ns": 1747084285449691359,
+     "rate": 1080.0,
+     "sampletype": "i",
+     "samplecnt": 500,
+     "sha256": "4588823bfddac029491c4ab5e07f35c1daf8ad591f6aef7a2c500d221624feca"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1747084284987654321,
+     "end_ns": 1747084285091358025,
+     "rate": 1080.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 2693984503,
+     "extra": {}
+    },
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1747084285092283951,
+     "end_ns": 1747084285195987655,
+     "rate": 1080.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 2064444270,
+     "extra": {}
+    },
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1747084285196913580,
+     "end_ns": 1747084285300617284,
+     "rate": 1080.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 1406298677,
+     "extra": {}
+    },
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1747084285301543210,
+     "end_ns": 1747084285405246914,
+     "rate": 1080.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 1995091862,
+     "extra": {}
+    },
+    {
+     "reclen": 251,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1747084285406172840,
+     "end_ns": 1747084285449691359,
+     "rate": 1080.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 48,
+     "crc": 2398584458,
+     "extra": {}
+    }
+   ]
+  },
+  "reference-testdata-olden.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": -181882115012346000,
+     "end_ns": -181882102537346000,
+     "rate": 40.0,
+     "sampletype": "i",
+     "samplecnt": 500,
+     "sha256": "4588823bfddac029491c4ab5e07f35c1daf8ad591f6aef7a2c500d221624feca"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 4096,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": -181882115012346000,
+     "end_ns": -181882102537346000,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 500,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0,
+        "Exception": [
+         {
+          "Time": "1964-03-27T21:11:48.123457Z",
+          "VCOCorrection": 0.0,
+          "ReceptionQuality": 0,
+          "Count": 1,
+          "Type": "Unexpected",
+          "ClockStatus": "Clock tower destroyed"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "Ye Olde Clock Tower Company"
+       }
+      }
+     }
+    }
+   ]
+  },
+  "reference-testdata-olden.mseed3": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": -181882115012345679,
+     "end_ns": -181882102537345679,
+     "rate": 40.0,
+     "sampletype": "i",
+     "samplecnt": 500,
+     "sha256": "4588823bfddac029491c4ab5e07f35c1daf8ad591f6aef7a2c500d221624feca"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 2250,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": -181882115012345679,
+     "end_ns": -181882102537345679,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 500,
+     "crc": 1569445971,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Exception": [
+         {
+          "Time": "1964-03-27T21:11:48.123456789Z",
+          "Count": 1,
+          "Type": "Unexpected",
+          "ClockStatus": "Clock tower destroyed"
+         }
+        ]
+       },
+       "Clock": {
+        "Model": "Ye Olde Clock Tower Company"
+       }
+      }
+     }
+    }
+   ]
+  },
+  "reference-testdata-repack.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_REPAK__H_H_Z",
      "pubversion": 2,
+     "start_ns": 1210599895123457000,
+     "end_ns": 1210599900103457000,
+     "rate": 100.0,
+     "sampletype": "i",
+     "samplecnt": 499,
+     "sha256": "76e241298c04a0c5692b75346150654be0a19e8b442ec16077ba7d664ccf2262"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 4096,
+     "format_version": 2,
+     "sid": "FDSN:XX_REPAK__H_H_Z",
+     "flags": 0,
+     "start_ns": 1210599895123457000,
+     "end_ns": 1210599900103457000,
+     "rate": 100.0,
+     "encoding": 11,
+     "pubversion": 2,
+     "samplecnt": 499,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    }
+   ]
+  },
+  "reference-testdata-repack.mseed3": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_REPAK__H_H_Z",
+     "pubversion": 2,
+     "start_ns": 1210599895123456789,
+     "end_ns": 1210599900103456789,
+     "rate": 100.0,
+     "sampletype": "i",
+     "samplecnt": 499,
+     "sha256": "76e241298c04a0c5692b75346150654be0a19e8b442ec16077ba7d664ccf2262"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 1596,
+     "format_version": 3,
+     "sid": "FDSN:XX_REPAK__H_H_Z",
+     "flags": 0,
+     "start_ns": 1210599895123456789,
+     "end_ns": 1210599900103456789,
+     "rate": 100.0,
+     "encoding": 11,
+     "pubversion": 2,
+     "samplecnt": 499,
+     "crc": 541216466,
+     "extra": {}
+    }
+   ]
+  },
+  "reference-testdata-steim1-LE.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780812475000000,
+     "rate": 40.0,
+     "sampletype": "i",
+     "samplecnt": 500,
+     "sha256": "4588823bfddac029491c4ab5e07f35c1daf8ad591f6aef7a2c500d221624feca"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780806075000000,
+     "rate": 40.0,
+     "encoding": 10,
+     "pubversion": 1,
      "samplecnt": 244,
      "crc": null,
      "extra": {}
@@ -783,11 +2721,11 @@
      "format_version": 2,
      "sid": "FDSN:XX_TEST__B_H_Z",
      "flags": 0,
-     "start_ns": 1325376006100000000,
-     "end_ns": 1325376008725000000,
+     "start_ns": 1336780806100000000,
+     "end_ns": 1336780808725000000,
      "rate": 40.0,
      "encoding": 10,
-     "pubversion": 2,
+     "pubversion": 1,
      "samplecnt": 106,
      "crc": null,
      "extra": {}
@@ -797,11 +2735,11 @@
      "format_version": 2,
      "sid": "FDSN:XX_TEST__B_H_Z",
      "flags": 0,
-     "start_ns": 1325376008750000000,
-     "end_ns": 1325376011300000000,
+     "start_ns": 1336780808750000000,
+     "end_ns": 1336780811300000000,
      "rate": 40.0,
      "encoding": 10,
-     "pubversion": 2,
+     "pubversion": 1,
      "samplecnt": 103,
      "crc": null,
      "extra": {}
@@ -811,11 +2749,11 @@
      "format_version": 2,
      "sid": "FDSN:XX_TEST__B_H_Z",
      "flags": 0,
-     "start_ns": 1325376011325000000,
-     "end_ns": 1325376012475000000,
+     "start_ns": 1336780811325000000,
+     "end_ns": 1336780812475000000,
      "rate": 40.0,
      "encoding": 10,
-     "pubversion": 2,
+     "pubversion": 1,
      "samplecnt": 47,
      "crc": null,
      "extra": {}
@@ -832,7 +2770,7 @@
      "rate": 40.0,
      "sampletype": "i",
      "samplecnt": 500,
-     "sha256": "57325adaeb550e8853c6540d7e3f502b052ecdc6b9048ac9662d5f51b46645c4"
+     "sha256": "4588823bfddac029491c4ab5e07f35c1daf8ad591f6aef7a2c500d221624feca"
     }
    ],
    "records": [
@@ -904,7 +2842,7 @@
      "rate": 40.0,
      "sampletype": "i",
      "samplecnt": 500,
-     "sha256": "57325adaeb550e8853c6540d7e3f502b052ecdc6b9048ac9662d5f51b46645c4"
+     "sha256": "4588823bfddac029491c4ab5e07f35c1daf8ad591f6aef7a2c500d221624feca"
     }
    ],
    "records": [
@@ -919,7 +2857,7 @@
      "encoding": 10,
      "pubversion": 1,
      "samplecnt": 244,
-     "crc": 643126446,
+     "crc": 2899926810,
      "extra": {}
     },
     {
@@ -933,7 +2871,7 @@
      "encoding": 10,
      "pubversion": 1,
      "samplecnt": 106,
-     "crc": 3773584680,
+     "crc": 3271920134,
      "extra": {}
     },
     {
@@ -947,7 +2885,7 @@
      "encoding": 10,
      "pubversion": 1,
      "samplecnt": 103,
-     "crc": 3328092756,
+     "crc": 580811668,
      "extra": {}
     },
     {
@@ -961,7 +2899,7 @@
      "encoding": 10,
      "pubversion": 1,
      "samplecnt": 47,
-     "crc": 798428105,
+     "crc": 2308701260,
      "extra": {}
     }
    ]
@@ -970,13 +2908,13 @@
    "segments": [
     {
      "sid": "FDSN:XX_TEST__B_H_Z",
-     "pubversion": 2,
-     "start_ns": 1325376000000000000,
-     "end_ns": 1325376012450000000,
+     "pubversion": 1,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780812450000000,
      "rate": 40.0,
      "sampletype": "i",
      "samplecnt": 499,
-     "sha256": "2396fe006794fc0ff29ea3a74a89aea01e049241e7f5723edf981c989bb01b22"
+     "sha256": "76e241298c04a0c5692b75346150654be0a19e8b442ec16077ba7d664ccf2262"
     }
    ],
    "records": [
@@ -985,11 +2923,11 @@
      "format_version": 2,
      "sid": "FDSN:XX_TEST__B_H_Z",
      "flags": 0,
-     "start_ns": 1325376000000000000,
-     "end_ns": 1325376006150000000,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780806150000000,
      "rate": 40.0,
      "encoding": 11,
-     "pubversion": 2,
+     "pubversion": 1,
      "samplecnt": 247,
      "crc": null,
      "extra": {}
@@ -999,11 +2937,11 @@
      "format_version": 2,
      "sid": "FDSN:XX_TEST__B_H_Z",
      "flags": 0,
-     "start_ns": 1325376006175000000,
-     "end_ns": 1325376008750000000,
+     "start_ns": 1336780806175000000,
+     "end_ns": 1336780808750000000,
      "rate": 40.0,
      "encoding": 11,
-     "pubversion": 2,
+     "pubversion": 1,
      "samplecnt": 104,
      "crc": null,
      "extra": {}
@@ -1013,11 +2951,11 @@
      "format_version": 2,
      "sid": "FDSN:XX_TEST__B_H_Z",
      "flags": 0,
-     "start_ns": 1325376008775000000,
-     "end_ns": 1325376011325000000,
+     "start_ns": 1336780808775000000,
+     "end_ns": 1336780811325000000,
      "rate": 40.0,
      "encoding": 11,
-     "pubversion": 2,
+     "pubversion": 1,
      "samplecnt": 103,
      "crc": null,
      "extra": {}
@@ -1027,11 +2965,11 @@
      "format_version": 2,
      "sid": "FDSN:XX_TEST__B_H_Z",
      "flags": 0,
-     "start_ns": 1325376011350000000,
-     "end_ns": 1325376012450000000,
+     "start_ns": 1336780811350000000,
+     "end_ns": 1336780812450000000,
      "rate": 40.0,
      "encoding": 11,
-     "pubversion": 2,
+     "pubversion": 1,
      "samplecnt": 45,
      "crc": null,
      "extra": {}
@@ -1048,7 +2986,7 @@
      "rate": 40.0,
      "sampletype": "i",
      "samplecnt": 499,
-     "sha256": "2396fe006794fc0ff29ea3a74a89aea01e049241e7f5723edf981c989bb01b22"
+     "sha256": "76e241298c04a0c5692b75346150654be0a19e8b442ec16077ba7d664ccf2262"
     }
    ],
    "records": [
@@ -1120,7 +3058,7 @@
      "rate": 40.0,
      "sampletype": "i",
      "samplecnt": 499,
-     "sha256": "2396fe006794fc0ff29ea3a74a89aea01e049241e7f5723edf981c989bb01b22"
+     "sha256": "76e241298c04a0c5692b75346150654be0a19e8b442ec16077ba7d664ccf2262"
     }
    ],
    "records": [
@@ -1135,7 +3073,7 @@
      "encoding": 11,
      "pubversion": 1,
      "samplecnt": 247,
-     "crc": 262210053,
+     "crc": 1189652789,
      "extra": {}
     },
     {
@@ -1149,7 +3087,7 @@
      "encoding": 11,
      "pubversion": 1,
      "samplecnt": 104,
-     "crc": 4224978445,
+     "crc": 2830451380,
      "extra": {}
     },
     {
@@ -1163,7 +3101,7 @@
      "encoding": 11,
      "pubversion": 1,
      "samplecnt": 103,
-     "crc": 356203461,
+     "crc": 4126186240,
      "extra": {}
     },
     {
@@ -1177,7 +3115,7 @@
      "encoding": 11,
      "pubversion": 1,
      "samplecnt": 45,
-     "crc": 3961603342,
+     "crc": 4226621470,
      "extra": {}
     }
    ]
@@ -3453,7 +5391,7 @@
    ],
    "records": [
     {
-     "reclen": 478,
+     "reclen": 414,
      "format_version": 3,
      "sid": "FDSN:IU_COLA_00_L_H_1",
      "flags": 4,
@@ -3463,7 +5401,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 135,
-     "crc": 1329507173,
+     "crc": 3461532151,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3483,7 +5421,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 188,
-     "crc": 928190930,
+     "crc": 1418199895,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3503,7 +5441,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 126,
-     "crc": 1089158749,
+     "crc": 135219595,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3523,7 +5461,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 156,
-     "crc": 115588653,
+     "crc": 2802550528,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3543,7 +5481,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 138,
-     "crc": 404686318,
+     "crc": 757312793,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3563,7 +5501,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 132,
-     "crc": 644181931,
+     "crc": 4053014585,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3583,7 +5521,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 110,
-     "crc": 3976559492,
+     "crc": 1672931566,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3603,7 +5541,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 131,
-     "crc": 88190261,
+     "crc": 2021501467,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3623,7 +5561,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 135,
-     "crc": 91551313,
+     "crc": 1075806282,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3643,7 +5581,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 117,
-     "crc": 4064599011,
+     "crc": 2948062496,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3663,7 +5601,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 114,
-     "crc": 3124661452,
+     "crc": 1637944369,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3683,7 +5621,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 117,
-     "crc": 544179422,
+     "crc": 3331679522,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3703,7 +5641,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 123,
-     "crc": 879271779,
+     "crc": 1745736193,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3723,7 +5661,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 123,
-     "crc": 2584082136,
+     "crc": 2631274017,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3743,7 +5681,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 142,
-     "crc": 3045688880,
+     "crc": 3746017835,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3763,7 +5701,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 130,
-     "crc": 3333759359,
+     "crc": 1058209455,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3783,7 +5721,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 127,
-     "crc": 3006801204,
+     "crc": 2831155700,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3803,7 +5741,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 120,
-     "crc": 3400368896,
+     "crc": 1678138796,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3823,7 +5761,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 118,
-     "crc": 1269824794,
+     "crc": 1540544957,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3843,7 +5781,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 108,
-     "crc": 3514812296,
+     "crc": 12824734,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3863,7 +5801,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 107,
-     "crc": 38776429,
+     "crc": 4092103685,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3883,7 +5821,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 107,
-     "crc": 2536961601,
+     "crc": 189966376,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3903,7 +5841,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 110,
-     "crc": 947317263,
+     "crc": 3781506942,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3923,7 +5861,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 103,
-     "crc": 2213963459,
+     "crc": 4261119170,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3943,7 +5881,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 103,
-     "crc": 3760485989,
+     "crc": 935338963,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3963,7 +5901,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 104,
-     "crc": 4204056024,
+     "crc": 1347460243,
      "extra": {
       "FDSN": {
        "Time": {
@@ -3983,7 +5921,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 105,
-     "crc": 2340964278,
+     "crc": 882668093,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4003,7 +5941,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 103,
-     "crc": 2056970452,
+     "crc": 195328770,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4023,7 +5961,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 103,
-     "crc": 1148563599,
+     "crc": 2192939352,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4043,7 +5981,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 106,
-     "crc": 3697037968,
+     "crc": 203866754,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4063,7 +6001,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 103,
-     "crc": 1943504365,
+     "crc": 2241044154,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4083,7 +6021,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 103,
-     "crc": 634238684,
+     "crc": 1818551535,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4103,7 +6041,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 110,
-     "crc": 1544736269,
+     "crc": 3898594469,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4123,7 +6061,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 103,
-     "crc": 3323349768,
+     "crc": 1355348726,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4143,7 +6081,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 108,
-     "crc": 1648006413,
+     "crc": 3813681315,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4153,7 +6091,7 @@
      }
     },
     {
-     "reclen": 350,
+     "reclen": 286,
      "format_version": 3,
      "sid": "FDSN:IU_COLA_00_L_H_1",
      "flags": 4,
@@ -4163,7 +6101,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 32,
-     "crc": 1635386623,
+     "crc": 3961202046,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4173,7 +6111,7 @@
      }
     },
     {
-     "reclen": 222,
+     "reclen": 158,
      "format_version": 3,
      "sid": "FDSN:IU_COLA_00_L_H_2",
      "flags": 4,
@@ -4183,7 +6121,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 22,
-     "crc": 2957371542,
+     "crc": 3402847067,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4203,7 +6141,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 207,
-     "crc": 3889487729,
+     "crc": 1862946216,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4223,7 +6161,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 186,
-     "crc": 3699154498,
+     "crc": 25396188,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4243,7 +6181,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 197,
-     "crc": 946982470,
+     "crc": 96951877,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4263,7 +6201,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 154,
-     "crc": 1533467295,
+     "crc": 694241228,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4283,7 +6221,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 159,
-     "crc": 3752515676,
+     "crc": 1686693610,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4303,7 +6241,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 156,
-     "crc": 237486549,
+     "crc": 975329955,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4323,7 +6261,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 150,
-     "crc": 2616413378,
+     "crc": 3782794686,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4343,7 +6281,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 114,
-     "crc": 1127781630,
+     "crc": 1069741871,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4363,7 +6301,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 126,
-     "crc": 486685514,
+     "crc": 3540031441,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4383,7 +6321,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 128,
-     "crc": 3053537894,
+     "crc": 3986765494,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4403,7 +6341,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 142,
-     "crc": 1862108609,
+     "crc": 3083375834,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4423,7 +6361,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 136,
-     "crc": 3184221218,
+     "crc": 2700203300,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4443,7 +6381,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 117,
-     "crc": 2316854419,
+     "crc": 1727982746,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4463,7 +6401,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 114,
-     "crc": 1555196766,
+     "crc": 714492468,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4483,7 +6421,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 109,
-     "crc": 1231781219,
+     "crc": 3137745331,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4503,7 +6441,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 110,
-     "crc": 4253280647,
+     "crc": 3534605558,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4523,7 +6461,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 112,
-     "crc": 1088501579,
+     "crc": 1852090189,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4543,7 +6481,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 110,
-     "crc": 390838772,
+     "crc": 1464251400,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4563,7 +6501,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 107,
-     "crc": 3711511404,
+     "crc": 3825584722,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4583,7 +6521,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 103,
-     "crc": 2906484993,
+     "crc": 811082535,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4603,7 +6541,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 104,
-     "crc": 1059644573,
+     "crc": 520489841,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4623,7 +6561,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 104,
-     "crc": 3357231242,
+     "crc": 2468268878,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4643,7 +6581,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 103,
-     "crc": 2871155111,
+     "crc": 1230677223,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4663,7 +6601,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 104,
-     "crc": 1247730636,
+     "crc": 2233957972,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4683,7 +6621,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 103,
-     "crc": 1898534896,
+     "crc": 3570340825,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4703,7 +6641,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 106,
-     "crc": 913458329,
+     "crc": 1311998383,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4723,7 +6661,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 103,
-     "crc": 1831022409,
+     "crc": 1100988331,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4743,7 +6681,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 106,
-     "crc": 3281781606,
+     "crc": 2781121451,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4763,7 +6701,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 106,
-     "crc": 1095549593,
+     "crc": 3954406147,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4783,7 +6721,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 105,
-     "crc": 2667409928,
+     "crc": 2698827024,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4803,7 +6741,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 109,
-     "crc": 726479107,
+     "crc": 1296298197,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4823,7 +6761,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 117,
-     "crc": 484769859,
+     "crc": 924041325,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4843,7 +6781,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 103,
-     "crc": 1806511054,
+     "crc": 2423798530,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4853,7 +6791,7 @@
      }
     },
     {
-     "reclen": 414,
+     "reclen": 350,
      "format_version": 3,
      "sid": "FDSN:IU_COLA_00_L_H_2",
      "flags": 4,
@@ -4863,7 +6801,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 68,
-     "crc": 903615338,
+     "crc": 366886661,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4873,7 +6811,7 @@
      }
     },
     {
-     "reclen": 414,
+     "reclen": 350,
      "format_version": 3,
      "sid": "FDSN:IU_COLA_00_L_H_Z",
      "flags": 4,
@@ -4883,7 +6821,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 112,
-     "crc": 534029768,
+     "crc": 3094816906,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4903,7 +6841,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 185,
-     "crc": 2828100627,
+     "crc": 1836169135,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4923,7 +6861,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 112,
-     "crc": 880213473,
+     "crc": 1763814841,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4943,7 +6881,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 132,
-     "crc": 2173661804,
+     "crc": 3903733285,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4963,7 +6901,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 144,
-     "crc": 3870397258,
+     "crc": 61530392,
      "extra": {
       "FDSN": {
        "Time": {
@@ -4983,7 +6921,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 154,
-     "crc": 307276282,
+     "crc": 1959328320,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5003,7 +6941,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 120,
-     "crc": 1289045812,
+     "crc": 2474935519,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5023,7 +6961,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 126,
-     "crc": 1049718041,
+     "crc": 3074839513,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5043,7 +6981,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 120,
-     "crc": 60760618,
+     "crc": 3742361828,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5063,7 +7001,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 123,
-     "crc": 3205952698,
+     "crc": 90854003,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5083,7 +7021,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 127,
-     "crc": 561998545,
+     "crc": 2660267824,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5103,7 +7041,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 119,
-     "crc": 2562478002,
+     "crc": 974450728,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5123,7 +7061,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 136,
-     "crc": 787896438,
+     "crc": 240984983,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5143,7 +7081,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 151,
-     "crc": 884247845,
+     "crc": 3501948912,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5163,7 +7101,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 136,
-     "crc": 677603047,
+     "crc": 2769775103,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5183,7 +7121,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 137,
-     "crc": 913672610,
+     "crc": 2569304558,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5203,7 +7141,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 122,
-     "crc": 3037880299,
+     "crc": 231658773,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5223,7 +7161,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 121,
-     "crc": 1223173363,
+     "crc": 1780785304,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5243,7 +7181,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 127,
-     "crc": 3612481276,
+     "crc": 3139988872,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5263,7 +7201,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 108,
-     "crc": 1924830705,
+     "crc": 1878668997,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5283,7 +7221,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 105,
-     "crc": 665871985,
+     "crc": 1907434283,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5303,7 +7241,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 106,
-     "crc": 2703407628,
+     "crc": 3195937600,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5323,7 +7261,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 108,
-     "crc": 3681470544,
+     "crc": 465649404,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5343,7 +7281,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 104,
-     "crc": 3251623372,
+     "crc": 3347494468,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5363,7 +7301,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 105,
-     "crc": 748572204,
+     "crc": 3454521227,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5383,7 +7321,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 103,
-     "crc": 1747347629,
+     "crc": 2124110154,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5403,7 +7341,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 103,
-     "crc": 3230473154,
+     "crc": 2372373465,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5423,7 +7361,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 103,
-     "crc": 514742323,
+     "crc": 2539167271,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5443,7 +7381,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 103,
-     "crc": 64806523,
+     "crc": 1326788065,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5463,7 +7401,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 104,
-     "crc": 2818746125,
+     "crc": 2645918110,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5483,7 +7421,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 103,
-     "crc": 2279355945,
+     "crc": 1806755820,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5503,7 +7441,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 103,
-     "crc": 1154621409,
+     "crc": 1118521911,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5523,7 +7461,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 104,
-     "crc": 3402319061,
+     "crc": 3167908826,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5543,7 +7481,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 103,
-     "crc": 3081554349,
+     "crc": 1912362579,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5563,7 +7501,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 104,
-     "crc": 2534587482,
+     "crc": 183806420,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5573,7 +7511,7 @@
      }
     },
     {
-     "reclen": 286,
+     "reclen": 222,
      "format_version": 3,
      "sid": "FDSN:IU_COLA_00_L_H_Z",
      "flags": 4,
@@ -5583,7 +7521,7 @@
      "encoding": 11,
      "pubversion": 4,
      "samplecnt": 27,
-     "crc": 4217267880,
+     "crc": 2610997983,
      "extra": {
       "FDSN": {
        "Time": {
@@ -5627,7 +7565,7 @@
          {
           "Type": "MURDOCK",
           "SignalAmplitude": 80.0,
-          "SignalPeriod": 0.3999999761581421,
+          "SignalPeriod": 0.39999998,
           "BackgroundEstimate": 18.0,
           "Wave": "DILATATION",
           "OnsetTime": "2004-07-28T20:28:06.185000Z",
@@ -5781,29 +7719,15 @@
     {
      "sid": "FDSN:IU_COLA_00_L_H_Z",
      "pubversion": 4,
-     "start_ns": 1267253400069500000,
+     "start_ns": 1267253512069541000,
      "end_ns": 1267253808069539000,
      "rate": 1.0,
      "sampletype": "i",
-     "samplecnt": 409,
-     "sha256": "782c6d40c2077e51c4b247c7b805c560561cc6e863d4ec07aa999fca5538b535"
+     "samplecnt": 297,
+     "sha256": "4d34767f6b110137b8159fd2942a4a5f828261e6968170393602c4e746a98344"
     }
    ],
    "records": [
-    {
-     "reclen": 512,
-     "format_version": 2,
-     "sid": "FDSN:IU_COLA_00_L_H_Z",
-     "flags": 4,
-     "start_ns": 1267253400069500000,
-     "end_ns": 1267253511069500000,
-     "rate": 1.0,
-     "encoding": 10,
-     "pubversion": 4,
-     "samplecnt": 112,
-     "crc": null,
-     "extra": {}
-    },
     {
      "reclen": 512,
      "format_version": 2,

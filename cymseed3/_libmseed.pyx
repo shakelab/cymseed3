@@ -53,10 +53,6 @@ cdef array.array _DOUBLE_ARRAY = _array.array("d")
 if _INT_ARRAY.itemsize != 4:
     raise ImportError("cymseed3 needs a 4-byte C int")
 
-# MiniSEED 3: offset of the CRC in the fixed header.
-cdef enum:
-    _MS3_CRC_OFFSET = 28
-
 # Message prefixes, used to tell warnings from errors.
 cdef const char *_WARNING_PREFIX = b"W:"
 cdef const char *_ERROR_PREFIX = b"E:"
@@ -131,29 +127,6 @@ cdef str _decode(const char *text):
     return text.decode("ascii", "replace")
 
 
-cdef bint _valid_crc(const unsigned char *record, uint64_t length):
-    """
-    Check the CRC of a MiniSEED 3 record without modifying it.
-
-    libmseed checks it by zeroing the CRC field in place, which is not
-    possible on read-only buffers (bytes, mmap).
-    """
-    cdef unsigned char zeros[4]
-    cdef uint32_t crc
-    cdef uint32_t stored = (
-        <uint32_t>record[_MS3_CRC_OFFSET]
-        | <uint32_t>record[_MS3_CRC_OFFSET + 1] << 8
-        | <uint32_t>record[_MS3_CRC_OFFSET + 2] << 16
-        | <uint32_t>record[_MS3_CRC_OFFSET + 3] << 24
-    )
-    memset(zeros, 0, 4)
-    crc = ms_crc32c(record, _MS3_CRC_OFFSET, 0)
-    crc = ms_crc32c(zeros, 4, crc)
-    crc = ms_crc32c(record + _MS3_CRC_OFFSET + 4,
-                    <int>(length - _MS3_CRC_OFFSET - 4), crc)
-    return crc == stored
-
-
 cdef bint _all_zero(const unsigned char *data, uint64_t size):
     cdef uint64_t i
     for i in range(size):
@@ -180,7 +153,6 @@ cdef class Scanner:
     cdef uint64_t _size
     cdef uint64_t _offset
     cdef uint32_t _flags
-    cdef bint _validate_crc
     cdef MS3Record *_msr
     cdef readonly uint64_t record_offset
     cdef readonly list messages
@@ -196,7 +168,8 @@ cdef class Scanner:
         self._flags = MSF_ATENDOFFILE
         if unpack:
             self._flags |= MSF_UNPACKDATA
-        self._validate_crc = validate_crc
+        if validate_crc:
+            self._flags |= MSF_VALIDATECRC
         self._msr = NULL
         self.record_offset = 0
         self.messages = []
@@ -207,15 +180,19 @@ cdef class Scanner:
     cdef const char *_pointer(self, uint64_t offset):
         return <const char *>&self._buffer[0] + offset
 
-    cdef uint64_t _skip(self, uint64_t offset):
-        """Return the number of bytes to skip after an invalid record."""
+    cdef int64_t _record_length(self, uint64_t offset):
+        """Return the length of a detected record, 0 if not known."""
         cdef uint8_t version
         cdef int64_t length = ms3_detect(
             self._pointer(offset), self._size - offset, &version)
-        cdef uint64_t position
         if length > 0 and <uint64_t>length <= self._size - offset:
-            return <uint64_t>length
-        position = offset + 1
+            return length
+        return 0
+
+    cdef uint64_t _skip(self, uint64_t offset):
+        """Return the number of bytes up to the next record header."""
+        cdef uint8_t version
+        cdef uint64_t position = offset + 1
         while self._size - position >= <uint64_t>MINRECLEN:
             if ms3_detect(self._pointer(position), self._size - position,
                           &version) >= 0:
@@ -231,26 +208,11 @@ cdef class Scanner:
         """
         cdef uint64_t offset
         cdef uint64_t skip
-        cdef int64_t length
-        cdef uint8_t version
         cdef int status
         self.messages = []
         while self._size - self._offset >= <uint64_t>MINRECLEN:
             offset = self._offset
             log = _start_log()
-            if self._validate_crc:
-                length = ms3_detect(self._pointer(offset),
-                                    self._size - offset, &version)
-                if (version == 3 and length > 0
-                        and <uint64_t>length <= self._size - offset
-                        and not _valid_crc(
-                            <const unsigned char *>self._pointer(offset),
-                            <uint64_t>length)):
-                    self.messages.append((1, (
-                        f"record at offset {offset} skipped: invalid CRC"
-                    )))
-                    self._offset = offset + <uint64_t>length
-                    continue
             status = msr3_parse(self._pointer(offset), self._size - offset,
                                 &self._msr, self._flags, 0)
             if status == MS_NOERROR:
@@ -268,14 +230,24 @@ cdef class Scanner:
                 )))
                 self._offset = self._size
                 return False
-            skip = self._skip(offset)
+            # An invalid record of known length (e.g. a wrong CRC) is
+            # skipped whole; otherwise up to the next record header.
             detail = "; ".join(text for _, text in log)
-            if not _all_zero(<const unsigned char *>self._pointer(offset),
-                             skip):
+            detail = f": {detail}" if detail else ""
+            skip = <uint64_t>self._record_length(offset)
+            if skip:
                 self.messages.append((1, (
-                    f"invalid data at offset {offset} skipped "
-                    f"({skip} bytes)" + (f": {detail}" if detail else "")
+                    f"invalid record at offset {offset} skipped "
+                    f"({skip} bytes){detail}"
                 )))
+            else:
+                skip = self._skip(offset)
+                if not _all_zero(
+                        <const unsigned char *>self._pointer(offset), skip):
+                    self.messages.append((1, (
+                        f"invalid data at offset {offset} skipped "
+                        f"({skip} bytes){detail}"
+                    )))
             self._offset = offset + skip
         if self._offset < self._size:
             if not _all_zero(
@@ -473,7 +445,8 @@ def sid_to_codes(str sid):
     memset(location, 0, 64)
     memset(channel, 0, 64)
     log = _start_log()
-    if ms_sid2nslc(encoded, network, station, location, channel) != 0:
+    if ms_sid2nslc_n(encoded, network, 64, station, 64, location, 64,
+                     channel, 64) != 0:
         return None, log
     return (_decode(network), _decode(station), _decode(location),
             _decode(channel)), log
@@ -509,8 +482,8 @@ def ns_to_string(int64_t nstime):
     """
     cdef char text[64]
     log = _start_log()
-    if ms_nstime2timestr(nstime, text, ISOMONTHDAY_Z,
-                         NANO_MICRO_NONE) == NULL:
+    if ms_nstime2timestr_n(nstime, text, 64, ISOMONTHDAY_Z,
+                           NANO_MICRO_NONE) == NULL:
         return None, log
     return _decode(text), log
 
