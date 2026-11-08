@@ -42,8 +42,8 @@ include_dirs = [libmseed_dir]
 # Define the extension module
 ext_modules = [
     Extension(
-        name="cymseed3",
-        sources=["cymseed3.pyx"] + libmseed_sources,
+        name="cymseed3._libmseed",
+        sources=["cymseed3/_libmseed.pyx"] + libmseed_sources,
         include_dirs=include_dirs,
         extra_compile_args=extra_compile_args,
         extra_link_args=extra_link_args,
@@ -52,7 +52,7 @@ ext_modules = [
 
 setup(
     name="cymseed3",
-    version="0.1.5",
+    version="0.2.0.dev0",
     description="A Python package for reading and writing miniseed files using libmseed 3.",
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -60,6 +60,8 @@ setup(
     author_email="vpoggi@ogs.it",
     url="https://github.com/shakelab/cymseed3",
     license="GPLv3",
+    packages=["cymseed3"],
+    package_data={"cymseed3": ["py.typed", "*.pyx", "*.pxd"]},
     ext_modules=cythonize(ext_modules),
     classifiers=[
         "Programming Language :: Python :: 3",

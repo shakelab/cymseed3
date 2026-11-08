@@ -1,0 +1,6242 @@
+{
+ "source": "libmseed 3.1.3 (ms3_readtracelist, ms3_readmsr_r)",
+ "hash": "sha256 of the samples (int32, float32 or float64 little-endian; text as bytes)",
+ "files": {
+  "reference-testdata-defaults.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780812450000000,
+     "rate": 40.0,
+     "sampletype": "i",
+     "samplecnt": 499,
+     "sha256": "2396fe006794fc0ff29ea3a74a89aea01e049241e7f5723edf981c989bb01b22"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 4096,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780812450000000,
+     "rate": 40.0,
+     "encoding": 11,
+     "pubversion": 1,
+     "samplecnt": 499,
+     "crc": null,
+     "extra": {}
+    }
+   ]
+  },
+  "reference-testdata-defaults.mseed3": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780812450000000,
+     "rate": 40.0,
+     "sampletype": "i",
+     "samplecnt": 499,
+     "sha256": "2396fe006794fc0ff29ea3a74a89aea01e049241e7f5723edf981c989bb01b22"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 1595,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780812450000000,
+     "rate": 40.0,
+     "encoding": 11,
+     "pubversion": 1,
+     "samplecnt": 499,
+     "crc": 2829048415,
+     "extra": {}
+    }
+   ]
+  },
+  "reference-testdata-float32.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780812475000000,
+     "rate": 40.0,
+     "sampletype": "f",
+     "samplecnt": 500,
+     "sha256": "3eac5381682189a23d788db6737d1b437cdf7ed09cda447ec7d96247f968d515"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780802825000000,
+     "rate": 40.0,
+     "encoding": 4,
+     "pubversion": 1,
+     "samplecnt": 114,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780802850000000,
+     "end_ns": 1336780805675000000,
+     "rate": 40.0,
+     "encoding": 4,
+     "pubversion": 1,
+     "samplecnt": 114,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780805700000000,
+     "end_ns": 1336780808525000000,
+     "rate": 40.0,
+     "encoding": 4,
+     "pubversion": 1,
+     "samplecnt": 114,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780808550000000,
+     "end_ns": 1336780811375000000,
+     "rate": 40.0,
+     "encoding": 4,
+     "pubversion": 1,
+     "samplecnt": 114,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780811400000000,
+     "end_ns": 1336780812475000000,
+     "rate": 40.0,
+     "encoding": 4,
+     "pubversion": 1,
+     "samplecnt": 44,
+     "crc": null,
+     "extra": {}
+    }
+   ]
+  },
+  "reference-testdata-float32.mseed3": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780812475000000,
+     "rate": 40.0,
+     "sampletype": "f",
+     "samplecnt": 500,
+     "sha256": "3eac5381682189a23d788db6737d1b437cdf7ed09cda447ec7d96247f968d515"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780802800000000,
+     "rate": 40.0,
+     "encoding": 4,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 2631570051,
+     "extra": {}
+    },
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780802825000000,
+     "end_ns": 1336780805625000000,
+     "rate": 40.0,
+     "encoding": 4,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 2889358784,
+     "extra": {}
+    },
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780805650000000,
+     "end_ns": 1336780808450000000,
+     "rate": 40.0,
+     "encoding": 4,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 3537761176,
+     "extra": {}
+    },
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780808475000000,
+     "end_ns": 1336780811275000000,
+     "rate": 40.0,
+     "encoding": 4,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 2364651870,
+     "extra": {}
+    },
+    {
+     "reclen": 251,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780811300000000,
+     "end_ns": 1336780812475000000,
+     "rate": 40.0,
+     "encoding": 4,
+     "pubversion": 1,
+     "samplecnt": 48,
+     "crc": 3790527179,
+     "extra": {}
+    }
+   ]
+  },
+  "reference-testdata-float64.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780812475000000,
+     "rate": 40.0,
+     "sampletype": "d",
+     "samplecnt": 500,
+     "sha256": "724cb3c5ae28b311c05f95c3cb850180db909a9f334fb1d02e951c6118637fbb"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780801400000000,
+     "rate": 40.0,
+     "encoding": 5,
+     "pubversion": 1,
+     "samplecnt": 57,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780801425000000,
+     "end_ns": 1336780802825000000,
+     "rate": 40.0,
+     "encoding": 5,
+     "pubversion": 1,
+     "samplecnt": 57,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780802850000000,
+     "end_ns": 1336780804250000000,
+     "rate": 40.0,
+     "encoding": 5,
+     "pubversion": 1,
+     "samplecnt": 57,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780804275000000,
+     "end_ns": 1336780805675000000,
+     "rate": 40.0,
+     "encoding": 5,
+     "pubversion": 1,
+     "samplecnt": 57,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780805700000000,
+     "end_ns": 1336780807100000000,
+     "rate": 40.0,
+     "encoding": 5,
+     "pubversion": 1,
+     "samplecnt": 57,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780807125000000,
+     "end_ns": 1336780808525000000,
+     "rate": 40.0,
+     "encoding": 5,
+     "pubversion": 1,
+     "samplecnt": 57,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780808550000000,
+     "end_ns": 1336780809950000000,
+     "rate": 40.0,
+     "encoding": 5,
+     "pubversion": 1,
+     "samplecnt": 57,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780809975000000,
+     "end_ns": 1336780811375000000,
+     "rate": 40.0,
+     "encoding": 5,
+     "pubversion": 1,
+     "samplecnt": 57,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780811400000000,
+     "end_ns": 1336780812475000000,
+     "rate": 40.0,
+     "encoding": 5,
+     "pubversion": 1,
+     "samplecnt": 44,
+     "crc": null,
+     "extra": {}
+    }
+   ]
+  },
+  "reference-testdata-float64.mseed3": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780812475000000,
+     "rate": 40.0,
+     "sampletype": "d",
+     "samplecnt": 500,
+     "sha256": "724cb3c5ae28b311c05f95c3cb850180db909a9f334fb1d02e951c6118637fbb"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 507,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780801375000000,
+     "rate": 40.0,
+     "encoding": 5,
+     "pubversion": 1,
+     "samplecnt": 56,
+     "crc": 2611962576,
+     "extra": {}
+    },
+    {
+     "reclen": 507,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780801400000000,
+     "end_ns": 1336780802775000000,
+     "rate": 40.0,
+     "encoding": 5,
+     "pubversion": 1,
+     "samplecnt": 56,
+     "crc": 3124995980,
+     "extra": {}
+    },
+    {
+     "reclen": 507,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780802800000000,
+     "end_ns": 1336780804175000000,
+     "rate": 40.0,
+     "encoding": 5,
+     "pubversion": 1,
+     "samplecnt": 56,
+     "crc": 1195064539,
+     "extra": {}
+    },
+    {
+     "reclen": 507,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780804200000000,
+     "end_ns": 1336780805575000000,
+     "rate": 40.0,
+     "encoding": 5,
+     "pubversion": 1,
+     "samplecnt": 56,
+     "crc": 2231541199,
+     "extra": {}
+    },
+    {
+     "reclen": 507,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780805600000000,
+     "end_ns": 1336780806975000000,
+     "rate": 40.0,
+     "encoding": 5,
+     "pubversion": 1,
+     "samplecnt": 56,
+     "crc": 3227919984,
+     "extra": {}
+    },
+    {
+     "reclen": 507,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780807000000000,
+     "end_ns": 1336780808375000000,
+     "rate": 40.0,
+     "encoding": 5,
+     "pubversion": 1,
+     "samplecnt": 56,
+     "crc": 499048813,
+     "extra": {}
+    },
+    {
+     "reclen": 507,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780808400000000,
+     "end_ns": 1336780809775000000,
+     "rate": 40.0,
+     "encoding": 5,
+     "pubversion": 1,
+     "samplecnt": 56,
+     "crc": 3701306274,
+     "extra": {}
+    },
+    {
+     "reclen": 507,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780809800000000,
+     "end_ns": 1336780811175000000,
+     "rate": 40.0,
+     "encoding": 5,
+     "pubversion": 1,
+     "samplecnt": 56,
+     "crc": 548199104,
+     "extra": {}
+    },
+    {
+     "reclen": 475,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780811200000000,
+     "end_ns": 1336780812475000000,
+     "rate": 40.0,
+     "encoding": 5,
+     "pubversion": 1,
+     "samplecnt": 52,
+     "crc": 555184481,
+     "extra": {}
+    }
+   ]
+  },
+  "reference-testdata-int16.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780805475000000,
+     "rate": 40.0,
+     "sampletype": "i",
+     "samplecnt": 220,
+     "sha256": "9c0a44ead082a412469e69e3b61d434e355011472f04c54fdba33f90e52e5824"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780805475000000,
+     "rate": 40.0,
+     "encoding": 1,
+     "pubversion": 1,
+     "samplecnt": 220,
+     "crc": null,
+     "extra": {}
+    }
+   ]
+  },
+  "reference-testdata-int16.mseed3": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780805475000000,
+     "rate": 40.0,
+     "sampletype": "i",
+     "samplecnt": 220,
+     "sha256": "9c0a44ead082a412469e69e3b61d434e355011472f04c54fdba33f90e52e5824"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 499,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780805475000000,
+     "rate": 40.0,
+     "encoding": 1,
+     "pubversion": 1,
+     "samplecnt": 220,
+     "crc": 3491876382,
+     "extra": {}
+    }
+   ]
+  },
+  "reference-testdata-int32.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780812475000000,
+     "rate": 40.0,
+     "sampletype": "i",
+     "samplecnt": 500,
+     "sha256": "57325adaeb550e8853c6540d7e3f502b052ecdc6b9048ac9662d5f51b46645c4"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780802825000000,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 114,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780802850000000,
+     "end_ns": 1336780805675000000,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 114,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780805700000000,
+     "end_ns": 1336780808525000000,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 114,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780808550000000,
+     "end_ns": 1336780811375000000,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 114,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780811400000000,
+     "end_ns": 1336780812475000000,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 44,
+     "crc": null,
+     "extra": {}
+    }
+   ]
+  },
+  "reference-testdata-int32.mseed3": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780812475000000,
+     "rate": 40.0,
+     "sampletype": "i",
+     "samplecnt": 500,
+     "sha256": "57325adaeb550e8853c6540d7e3f502b052ecdc6b9048ac9662d5f51b46645c4"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780802800000000,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 1811693711,
+     "extra": {}
+    },
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780802825000000,
+     "end_ns": 1336780805625000000,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 343512849,
+     "extra": {}
+    },
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780805650000000,
+     "end_ns": 1336780808450000000,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 2702853883,
+     "extra": {}
+    },
+    {
+     "reclen": 511,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780808475000000,
+     "end_ns": 1336780811275000000,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 113,
+     "crc": 3792333515,
+     "extra": {}
+    },
+    {
+     "reclen": 251,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780811300000000,
+     "end_ns": 1336780812475000000,
+     "rate": 40.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 48,
+     "crc": 4157028086,
+     "extra": {}
+    }
+   ]
+  },
+  "reference-testdata-steim1-LE.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 2,
+     "start_ns": 1325376000000000000,
+     "end_ns": 1325376012475000000,
+     "rate": 40.0,
+     "sampletype": "i",
+     "samplecnt": 500,
+     "sha256": "57325adaeb550e8853c6540d7e3f502b052ecdc6b9048ac9662d5f51b46645c4"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1325376000000000000,
+     "end_ns": 1325376006075000000,
+     "rate": 40.0,
+     "encoding": 10,
+     "pubversion": 2,
+     "samplecnt": 244,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1325376006100000000,
+     "end_ns": 1325376008725000000,
+     "rate": 40.0,
+     "encoding": 10,
+     "pubversion": 2,
+     "samplecnt": 106,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1325376008750000000,
+     "end_ns": 1325376011300000000,
+     "rate": 40.0,
+     "encoding": 10,
+     "pubversion": 2,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1325376011325000000,
+     "end_ns": 1325376012475000000,
+     "rate": 40.0,
+     "encoding": 10,
+     "pubversion": 2,
+     "samplecnt": 47,
+     "crc": null,
+     "extra": {}
+    }
+   ]
+  },
+  "reference-testdata-steim1.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780812475000000,
+     "rate": 40.0,
+     "sampletype": "i",
+     "samplecnt": 500,
+     "sha256": "57325adaeb550e8853c6540d7e3f502b052ecdc6b9048ac9662d5f51b46645c4"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780806075000000,
+     "rate": 40.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 244,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780806100000000,
+     "end_ns": 1336780808725000000,
+     "rate": 40.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 106,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780808750000000,
+     "end_ns": 1336780811300000000,
+     "rate": 40.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780811325000000,
+     "end_ns": 1336780812475000000,
+     "rate": 40.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 47,
+     "crc": null,
+     "extra": {}
+    }
+   ]
+  },
+  "reference-testdata-steim1.mseed3": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780812475000000,
+     "rate": 40.0,
+     "sampletype": "i",
+     "samplecnt": 500,
+     "sha256": "57325adaeb550e8853c6540d7e3f502b052ecdc6b9048ac9662d5f51b46645c4"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 507,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780806075000000,
+     "rate": 40.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 244,
+     "crc": 643126446,
+     "extra": {}
+    },
+    {
+     "reclen": 507,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780806100000000,
+     "end_ns": 1336780808725000000,
+     "rate": 40.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 106,
+     "crc": 3773584680,
+     "extra": {}
+    },
+    {
+     "reclen": 507,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780808750000000,
+     "end_ns": 1336780811300000000,
+     "rate": 40.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 103,
+     "crc": 3328092756,
+     "extra": {}
+    },
+    {
+     "reclen": 315,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780811325000000,
+     "end_ns": 1336780812475000000,
+     "rate": 40.0,
+     "encoding": 10,
+     "pubversion": 1,
+     "samplecnt": 47,
+     "crc": 798428105,
+     "extra": {}
+    }
+   ]
+  },
+  "reference-testdata-steim2-LE.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 2,
+     "start_ns": 1325376000000000000,
+     "end_ns": 1325376012450000000,
+     "rate": 40.0,
+     "sampletype": "i",
+     "samplecnt": 499,
+     "sha256": "2396fe006794fc0ff29ea3a74a89aea01e049241e7f5723edf981c989bb01b22"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1325376000000000000,
+     "end_ns": 1325376006150000000,
+     "rate": 40.0,
+     "encoding": 11,
+     "pubversion": 2,
+     "samplecnt": 247,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1325376006175000000,
+     "end_ns": 1325376008750000000,
+     "rate": 40.0,
+     "encoding": 11,
+     "pubversion": 2,
+     "samplecnt": 104,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1325376008775000000,
+     "end_ns": 1325376011325000000,
+     "rate": 40.0,
+     "encoding": 11,
+     "pubversion": 2,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1325376011350000000,
+     "end_ns": 1325376012450000000,
+     "rate": 40.0,
+     "encoding": 11,
+     "pubversion": 2,
+     "samplecnt": 45,
+     "crc": null,
+     "extra": {}
+    }
+   ]
+  },
+  "reference-testdata-steim2.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780812450000000,
+     "rate": 40.0,
+     "sampletype": "i",
+     "samplecnt": 499,
+     "sha256": "2396fe006794fc0ff29ea3a74a89aea01e049241e7f5723edf981c989bb01b22"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780806150000000,
+     "rate": 40.0,
+     "encoding": 11,
+     "pubversion": 1,
+     "samplecnt": 247,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780806175000000,
+     "end_ns": 1336780808750000000,
+     "rate": 40.0,
+     "encoding": 11,
+     "pubversion": 1,
+     "samplecnt": 104,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780808775000000,
+     "end_ns": 1336780811325000000,
+     "rate": 40.0,
+     "encoding": 11,
+     "pubversion": 1,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780811350000000,
+     "end_ns": 1336780812450000000,
+     "rate": 40.0,
+     "encoding": 11,
+     "pubversion": 1,
+     "samplecnt": 45,
+     "crc": null,
+     "extra": {}
+    }
+   ]
+  },
+  "reference-testdata-steim2.mseed3": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "pubversion": 1,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780812450000000,
+     "rate": 40.0,
+     "sampletype": "i",
+     "samplecnt": 499,
+     "sha256": "2396fe006794fc0ff29ea3a74a89aea01e049241e7f5723edf981c989bb01b22"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 507,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780806150000000,
+     "rate": 40.0,
+     "encoding": 11,
+     "pubversion": 1,
+     "samplecnt": 247,
+     "crc": 262210053,
+     "extra": {}
+    },
+    {
+     "reclen": 507,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780806175000000,
+     "end_ns": 1336780808750000000,
+     "rate": 40.0,
+     "encoding": 11,
+     "pubversion": 1,
+     "samplecnt": 104,
+     "crc": 4224978445,
+     "extra": {}
+    },
+    {
+     "reclen": 507,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780808775000000,
+     "end_ns": 1336780811325000000,
+     "rate": 40.0,
+     "encoding": 11,
+     "pubversion": 1,
+     "samplecnt": 103,
+     "crc": 356203461,
+     "extra": {}
+    },
+    {
+     "reclen": 315,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__B_H_Z",
+     "flags": 0,
+     "start_ns": 1336780811350000000,
+     "end_ns": 1336780812450000000,
+     "rate": 40.0,
+     "encoding": 11,
+     "pubversion": 1,
+     "samplecnt": 45,
+     "crc": 3961603342,
+     "extra": {}
+    }
+   ]
+  },
+  "reference-testdata-text.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__L_O_G",
+     "pubversion": 1,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780800000000000,
+     "rate": 0.0,
+     "sampletype": "t",
+     "samplecnt": 235,
+     "sha256": "0cb31b6866053bcdd9678e0558ca7057f63aba471fd9dadb05afb2b2a6a68805"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__L_O_G",
+     "flags": 0,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780800000000000,
+     "rate": 0.0,
+     "encoding": 0,
+     "pubversion": 1,
+     "samplecnt": 235,
+     "crc": null,
+     "extra": {}
+    }
+   ]
+  },
+  "reference-testdata-text.mseed3": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__L_O_G",
+     "pubversion": 1,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780800000000000,
+     "rate": 0.0,
+     "sampletype": "t",
+     "samplecnt": 235,
+     "sha256": "0cb31b6866053bcdd9678e0558ca7057f63aba471fd9dadb05afb2b2a6a68805"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 294,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST__L_O_G",
+     "flags": 0,
+     "start_ns": 1336780800000000000,
+     "end_ns": 1336780800000000000,
+     "rate": 0.0,
+     "encoding": 0,
+     "pubversion": 1,
+     "samplecnt": 235,
+     "crc": 410049183,
+     "extra": {}
+    }
+   ]
+  },
+  "testdata-3channel-signal.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "pubversion": 4,
+     "start_ns": 1267253400069539000,
+     "end_ns": 1267257599069538000,
+     "rate": 1.0,
+     "sampletype": "i",
+     "samplecnt": 4200,
+     "sha256": "49f55974db8c15f30e50a27d1a09b843b858c7431217a265268a4f80a388abf4"
+    },
+    {
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "pubversion": 4,
+     "start_ns": 1267253400069539000,
+     "end_ns": 1267257599069538000,
+     "rate": 1.0,
+     "sampletype": "i",
+     "samplecnt": 4200,
+     "sha256": "a73308e41daf37802b4f93a74a42ad3ea008dfd2046dd363c05b86bad37a3e6e"
+    },
+    {
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "pubversion": 4,
+     "start_ns": 1267253400069539000,
+     "end_ns": 1267257599069538000,
+     "rate": 1.0,
+     "sampletype": "i",
+     "samplecnt": 4200,
+     "sha256": "7b90dafd4bd8ef102ebd2502e06683ef68604d49a2903da92e1d369b2cfaa9b9"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267253400069539000,
+     "end_ns": 1267253534069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 135,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267253535069539000,
+     "end_ns": 1267253722069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 188,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267253723069541000,
+     "end_ns": 1267253848069541000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 126,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267253849069539000,
+     "end_ns": 1267254004069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 156,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267254005069539000,
+     "end_ns": 1267254142069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 138,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267254143069539000,
+     "end_ns": 1267254274069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 132,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267254275069539000,
+     "end_ns": 1267254384069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 110,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267254385069539000,
+     "end_ns": 1267254515069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 131,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267254516069538000,
+     "end_ns": 1267254650069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 135,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267254651069539000,
+     "end_ns": 1267254767069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 117,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267254768069539000,
+     "end_ns": 1267254881069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 114,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267254882069538000,
+     "end_ns": 1267254998069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 117,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267254999069538000,
+     "end_ns": 1267255121069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 123,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267255122069539000,
+     "end_ns": 1267255244069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 123,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267255245069538000,
+     "end_ns": 1267255386069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 142,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267255387069538000,
+     "end_ns": 1267255516069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 130,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267255517069538000,
+     "end_ns": 1267255643069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 127,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267255644069538000,
+     "end_ns": 1267255763069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 120,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267255764069538000,
+     "end_ns": 1267255881069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 118,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267255882069538000,
+     "end_ns": 1267255989069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 108,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267255990069538000,
+     "end_ns": 1267256096069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 107,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267256097069538000,
+     "end_ns": 1267256203069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 107,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267256204069538000,
+     "end_ns": 1267256313069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 110,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267256314069538000,
+     "end_ns": 1267256416069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267256417069538000,
+     "end_ns": 1267256519069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267256520069538000,
+     "end_ns": 1267256623069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 104,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267256624069536000,
+     "end_ns": 1267256728069536000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 105,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267256729069538000,
+     "end_ns": 1267256831069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267256832069538000,
+     "end_ns": 1267256934069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267256935069538000,
+     "end_ns": 1267257040069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 106,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267257041069538000,
+     "end_ns": 1267257143069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267257144069538000,
+     "end_ns": 1267257246069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267257247069538000,
+     "end_ns": 1267257356069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 110,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267257357069538000,
+     "end_ns": 1267257459069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267257460069538000,
+     "end_ns": 1267257567069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 108,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267257568069538000,
+     "end_ns": 1267257599069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 32,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267253400069539000,
+     "end_ns": 1267253421069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 22,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267253422069539000,
+     "end_ns": 1267253628069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 207,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267253629069539000,
+     "end_ns": 1267253814069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 186,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267253815069539000,
+     "end_ns": 1267254011069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 197,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267254012069539000,
+     "end_ns": 1267254165069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 154,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267254166069539000,
+     "end_ns": 1267254324069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 159,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267254325069539000,
+     "end_ns": 1267254480069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 156,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267254481069539000,
+     "end_ns": 1267254630069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 150,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267254631069538000,
+     "end_ns": 1267254744069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 114,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267254745069539000,
+     "end_ns": 1267254870069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 126,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267254871069538000,
+     "end_ns": 1267254998069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 128,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267254999069538000,
+     "end_ns": 1267255140069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 142,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267255141069538000,
+     "end_ns": 1267255276069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 136,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267255277069538000,
+     "end_ns": 1267255393069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 117,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267255394069538000,
+     "end_ns": 1267255507069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 114,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267255508069538000,
+     "end_ns": 1267255616069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 109,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267255617069536000,
+     "end_ns": 1267255726069536000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 110,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267255727069536000,
+     "end_ns": 1267255838069536000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 112,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267255839069538000,
+     "end_ns": 1267255948069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 110,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267255949069538000,
+     "end_ns": 1267256055069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 107,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267256056069538000,
+     "end_ns": 1267256158069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267256159069538000,
+     "end_ns": 1267256262069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 104,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267256263069538000,
+     "end_ns": 1267256366069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 104,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267256367069536000,
+     "end_ns": 1267256469069536000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267256470069536000,
+     "end_ns": 1267256573069536000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 104,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267256574069538000,
+     "end_ns": 1267256676069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267256677069538000,
+     "end_ns": 1267256782069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 106,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267256783069536000,
+     "end_ns": 1267256885069536000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267256886069538000,
+     "end_ns": 1267256991069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 106,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267256992069538000,
+     "end_ns": 1267257097069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 106,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267257098069538000,
+     "end_ns": 1267257202069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 105,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267257203069538000,
+     "end_ns": 1267257311069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 109,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267257312069538000,
+     "end_ns": 1267257428069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 117,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267257429069538000,
+     "end_ns": 1267257531069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267257532069538000,
+     "end_ns": 1267257599069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 68,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267253400069539000,
+     "end_ns": 1267253511069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 112,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267253512069541000,
+     "end_ns": 1267253696069541000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 185,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267253697069539000,
+     "end_ns": 1267253808069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 112,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267253809069539000,
+     "end_ns": 1267253940069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 132,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267253941069539000,
+     "end_ns": 1267254084069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 144,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267254085069539000,
+     "end_ns": 1267254238069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 154,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267254239069539000,
+     "end_ns": 1267254358069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 120,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267254359069539000,
+     "end_ns": 1267254484069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 126,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267254485069539000,
+     "end_ns": 1267254604069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 120,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267254605069539000,
+     "end_ns": 1267254727069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 123,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267254728069539000,
+     "end_ns": 1267254854069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 127,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267254855069538000,
+     "end_ns": 1267254973069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 119,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267254974069538000,
+     "end_ns": 1267255109069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 136,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267255110069538000,
+     "end_ns": 1267255260069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 151,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267255261069538000,
+     "end_ns": 1267255396069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 136,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267255397069538000,
+     "end_ns": 1267255533069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 137,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267255534069538000,
+     "end_ns": 1267255655069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 122,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267255656069536000,
+     "end_ns": 1267255776069536000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 121,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267255777069538000,
+     "end_ns": 1267255903069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 127,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267255904069538000,
+     "end_ns": 1267256011069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 108,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267256012069538000,
+     "end_ns": 1267256116069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 105,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267256117069538000,
+     "end_ns": 1267256222069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 106,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267256223069536000,
+     "end_ns": 1267256330069536000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 108,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267256331069538000,
+     "end_ns": 1267256434069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 104,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267256435069538000,
+     "end_ns": 1267256539069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 105,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267256540069538000,
+     "end_ns": 1267256642069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267256643069538000,
+     "end_ns": 1267256745069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267256746069538000,
+     "end_ns": 1267256848069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267256849069538000,
+     "end_ns": 1267256951069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267256952069538000,
+     "end_ns": 1267257055069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 104,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267257056069536000,
+     "end_ns": 1267257158069536000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267257159069538000,
+     "end_ns": 1267257261069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267257262069538000,
+     "end_ns": 1267257365069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 104,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267257366069538000,
+     "end_ns": 1267257468069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267257469069538000,
+     "end_ns": 1267257572069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 104,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267257573069538000,
+     "end_ns": 1267257599069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 27,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    }
+   ]
+  },
+  "testdata-3channel-signal.mseed3": {
+   "segments": [
+    {
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "pubversion": 4,
+     "start_ns": 1267253400069539000,
+     "end_ns": 1267257599069538000,
+     "rate": 1.0,
+     "sampletype": "i",
+     "samplecnt": 4200,
+     "sha256": "49f55974db8c15f30e50a27d1a09b843b858c7431217a265268a4f80a388abf4"
+    },
+    {
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "pubversion": 4,
+     "start_ns": 1267253400069539000,
+     "end_ns": 1267257599069538000,
+     "rate": 1.0,
+     "sampletype": "i",
+     "samplecnt": 4200,
+     "sha256": "a73308e41daf37802b4f93a74a42ad3ea008dfd2046dd363c05b86bad37a3e6e"
+    },
+    {
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "pubversion": 4,
+     "start_ns": 1267253400069539000,
+     "end_ns": 1267257599069538000,
+     "rate": 1.0,
+     "sampletype": "i",
+     "samplecnt": 4200,
+     "sha256": "7b90dafd4bd8ef102ebd2502e06683ef68604d49a2903da92e1d369b2cfaa9b9"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 478,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267253400069539000,
+     "end_ns": 1267253534069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 135,
+     "crc": 1329507173,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267253535069539000,
+     "end_ns": 1267253722069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 188,
+     "crc": 928190930,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267253723069541000,
+     "end_ns": 1267253848069541000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 126,
+     "crc": 1089158749,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267253849069539000,
+     "end_ns": 1267254004069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 156,
+     "crc": 115588653,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267254005069539000,
+     "end_ns": 1267254142069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 138,
+     "crc": 404686318,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267254143069539000,
+     "end_ns": 1267254274069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 132,
+     "crc": 644181931,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267254275069539000,
+     "end_ns": 1267254384069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 110,
+     "crc": 3976559492,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267254385069539000,
+     "end_ns": 1267254515069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 131,
+     "crc": 88190261,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267254516069538000,
+     "end_ns": 1267254650069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 135,
+     "crc": 91551313,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267254651069539000,
+     "end_ns": 1267254767069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 117,
+     "crc": 4064599011,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267254768069539000,
+     "end_ns": 1267254881069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 114,
+     "crc": 3124661452,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267254882069538000,
+     "end_ns": 1267254998069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 117,
+     "crc": 544179422,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267254999069538000,
+     "end_ns": 1267255121069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 123,
+     "crc": 879271779,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267255122069539000,
+     "end_ns": 1267255244069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 123,
+     "crc": 2584082136,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267255245069538000,
+     "end_ns": 1267255386069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 142,
+     "crc": 3045688880,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267255387069538000,
+     "end_ns": 1267255516069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 130,
+     "crc": 3333759359,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267255517069538000,
+     "end_ns": 1267255643069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 127,
+     "crc": 3006801204,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267255644069538000,
+     "end_ns": 1267255763069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 120,
+     "crc": 3400368896,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267255764069538000,
+     "end_ns": 1267255881069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 118,
+     "crc": 1269824794,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267255882069538000,
+     "end_ns": 1267255989069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 108,
+     "crc": 3514812296,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267255990069538000,
+     "end_ns": 1267256096069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 107,
+     "crc": 38776429,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267256097069538000,
+     "end_ns": 1267256203069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 107,
+     "crc": 2536961601,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267256204069538000,
+     "end_ns": 1267256313069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 110,
+     "crc": 947317263,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267256314069538000,
+     "end_ns": 1267256416069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": 2213963459,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267256417069538000,
+     "end_ns": 1267256519069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": 3760485989,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267256520069538000,
+     "end_ns": 1267256623069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 104,
+     "crc": 4204056024,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267256624069536000,
+     "end_ns": 1267256728069536000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 105,
+     "crc": 2340964278,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267256729069538000,
+     "end_ns": 1267256831069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": 2056970452,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267256832069538000,
+     "end_ns": 1267256934069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": 1148563599,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267256935069538000,
+     "end_ns": 1267257040069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 106,
+     "crc": 3697037968,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267257041069538000,
+     "end_ns": 1267257143069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": 1943504365,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267257144069538000,
+     "end_ns": 1267257246069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": 634238684,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267257247069538000,
+     "end_ns": 1267257356069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 110,
+     "crc": 1544736269,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267257357069538000,
+     "end_ns": 1267257459069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": 3323349768,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267257460069538000,
+     "end_ns": 1267257567069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 108,
+     "crc": 1648006413,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 350,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_1",
+     "flags": 4,
+     "start_ns": 1267257568069538000,
+     "end_ns": 1267257599069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 32,
+     "crc": 1635386623,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 222,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267253400069539000,
+     "end_ns": 1267253421069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 22,
+     "crc": 2957371542,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267253422069539000,
+     "end_ns": 1267253628069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 207,
+     "crc": 3889487729,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267253629069539000,
+     "end_ns": 1267253814069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 186,
+     "crc": 3699154498,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267253815069539000,
+     "end_ns": 1267254011069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 197,
+     "crc": 946982470,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267254012069539000,
+     "end_ns": 1267254165069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 154,
+     "crc": 1533467295,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267254166069539000,
+     "end_ns": 1267254324069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 159,
+     "crc": 3752515676,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267254325069539000,
+     "end_ns": 1267254480069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 156,
+     "crc": 237486549,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267254481069539000,
+     "end_ns": 1267254630069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 150,
+     "crc": 2616413378,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267254631069538000,
+     "end_ns": 1267254744069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 114,
+     "crc": 1127781630,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267254745069539000,
+     "end_ns": 1267254870069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 126,
+     "crc": 486685514,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267254871069538000,
+     "end_ns": 1267254998069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 128,
+     "crc": 3053537894,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267254999069538000,
+     "end_ns": 1267255140069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 142,
+     "crc": 1862108609,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267255141069538000,
+     "end_ns": 1267255276069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 136,
+     "crc": 3184221218,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267255277069538000,
+     "end_ns": 1267255393069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 117,
+     "crc": 2316854419,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267255394069538000,
+     "end_ns": 1267255507069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 114,
+     "crc": 1555196766,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267255508069538000,
+     "end_ns": 1267255616069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 109,
+     "crc": 1231781219,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267255617069536000,
+     "end_ns": 1267255726069536000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 110,
+     "crc": 4253280647,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267255727069536000,
+     "end_ns": 1267255838069536000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 112,
+     "crc": 1088501579,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267255839069538000,
+     "end_ns": 1267255948069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 110,
+     "crc": 390838772,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267255949069538000,
+     "end_ns": 1267256055069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 107,
+     "crc": 3711511404,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267256056069538000,
+     "end_ns": 1267256158069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": 2906484993,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267256159069538000,
+     "end_ns": 1267256262069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 104,
+     "crc": 1059644573,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267256263069538000,
+     "end_ns": 1267256366069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 104,
+     "crc": 3357231242,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267256367069536000,
+     "end_ns": 1267256469069536000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": 2871155111,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267256470069536000,
+     "end_ns": 1267256573069536000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 104,
+     "crc": 1247730636,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267256574069538000,
+     "end_ns": 1267256676069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": 1898534896,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267256677069538000,
+     "end_ns": 1267256782069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 106,
+     "crc": 913458329,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267256783069536000,
+     "end_ns": 1267256885069536000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": 1831022409,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267256886069538000,
+     "end_ns": 1267256991069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 106,
+     "crc": 3281781606,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267256992069538000,
+     "end_ns": 1267257097069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 106,
+     "crc": 1095549593,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267257098069538000,
+     "end_ns": 1267257202069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 105,
+     "crc": 2667409928,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267257203069538000,
+     "end_ns": 1267257311069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 109,
+     "crc": 726479107,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267257312069538000,
+     "end_ns": 1267257428069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 117,
+     "crc": 484769859,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267257429069538000,
+     "end_ns": 1267257531069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": 1806511054,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 414,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_2",
+     "flags": 4,
+     "start_ns": 1267257532069538000,
+     "end_ns": 1267257599069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 68,
+     "crc": 903615338,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 414,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267253400069539000,
+     "end_ns": 1267253511069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 112,
+     "crc": 534029768,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267253512069541000,
+     "end_ns": 1267253696069541000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 185,
+     "crc": 2828100627,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267253697069539000,
+     "end_ns": 1267253808069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 112,
+     "crc": 880213473,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267253809069539000,
+     "end_ns": 1267253940069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 132,
+     "crc": 2173661804,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267253941069539000,
+     "end_ns": 1267254084069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 144,
+     "crc": 3870397258,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267254085069539000,
+     "end_ns": 1267254238069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 154,
+     "crc": 307276282,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267254239069539000,
+     "end_ns": 1267254358069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 120,
+     "crc": 1289045812,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267254359069539000,
+     "end_ns": 1267254484069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 126,
+     "crc": 1049718041,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267254485069539000,
+     "end_ns": 1267254604069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 120,
+     "crc": 60760618,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267254605069539000,
+     "end_ns": 1267254727069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 123,
+     "crc": 3205952698,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267254728069539000,
+     "end_ns": 1267254854069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 127,
+     "crc": 561998545,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267254855069538000,
+     "end_ns": 1267254973069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 119,
+     "crc": 2562478002,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267254974069538000,
+     "end_ns": 1267255109069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 136,
+     "crc": 787896438,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267255110069538000,
+     "end_ns": 1267255260069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 151,
+     "crc": 884247845,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267255261069538000,
+     "end_ns": 1267255396069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 136,
+     "crc": 677603047,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267255397069538000,
+     "end_ns": 1267255533069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 137,
+     "crc": 913672610,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267255534069538000,
+     "end_ns": 1267255655069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 122,
+     "crc": 3037880299,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267255656069536000,
+     "end_ns": 1267255776069536000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 121,
+     "crc": 1223173363,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267255777069538000,
+     "end_ns": 1267255903069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 127,
+     "crc": 3612481276,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267255904069538000,
+     "end_ns": 1267256011069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 108,
+     "crc": 1924830705,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267256012069538000,
+     "end_ns": 1267256116069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 105,
+     "crc": 665871985,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267256117069538000,
+     "end_ns": 1267256222069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 106,
+     "crc": 2703407628,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267256223069536000,
+     "end_ns": 1267256330069536000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 108,
+     "crc": 3681470544,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267256331069538000,
+     "end_ns": 1267256434069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 104,
+     "crc": 3251623372,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267256435069538000,
+     "end_ns": 1267256539069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 105,
+     "crc": 748572204,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267256540069538000,
+     "end_ns": 1267256642069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": 1747347629,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267256643069538000,
+     "end_ns": 1267256745069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": 3230473154,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267256746069538000,
+     "end_ns": 1267256848069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": 514742323,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267256849069538000,
+     "end_ns": 1267256951069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": 64806523,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267256952069538000,
+     "end_ns": 1267257055069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 104,
+     "crc": 2818746125,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267257056069536000,
+     "end_ns": 1267257158069536000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": 2279355945,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267257159069538000,
+     "end_ns": 1267257261069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": 1154621409,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267257262069538000,
+     "end_ns": 1267257365069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 104,
+     "crc": 3402319061,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267257366069538000,
+     "end_ns": 1267257468069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 103,
+     "crc": 3081554349,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 542,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267257469069538000,
+     "end_ns": 1267257572069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 104,
+     "crc": 2534587482,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 286,
+     "format_version": 3,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267257573069538000,
+     "end_ns": 1267257599069538000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 27,
+     "crc": 4217267880,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    }
+   ]
+  },
+  "testdata-detection.record.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST_00_B_H_Z",
+     "pubversion": 2,
+     "start_ns": 1091046489000000000,
+     "end_ns": 1091046489000000000,
+     "rate": 0.0,
+     "sampletype": "-",
+     "samplecnt": 0,
+     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST_00_B_H_Z",
+     "flags": 0,
+     "start_ns": 1091046489000000000,
+     "end_ns": 1091046489000000000,
+     "rate": 0.0,
+     "encoding": 0,
+     "pubversion": 2,
+     "samplecnt": 0,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Event": {
+        "Detection": [
+         {
+          "Type": "MURDOCK",
+          "SignalAmplitude": 80.0,
+          "SignalPeriod": 0.3999999761581421,
+          "BackgroundEstimate": 18.0,
+          "Wave": "DILATATION",
+          "OnsetTime": "2004-07-28T20:28:06.185000Z",
+          "MEDSNR": [
+           1,
+           3,
+           2,
+           1,
+           4,
+           0
+          ],
+          "MEDLookback": 2,
+          "MEDPickAlgorithm": 0,
+          "Detector": "Z_SPWWSS"
+         }
+        ]
+       }
+      }
+     }
+    }
+   ]
+  },
+  "testdata-encoding-CDSN.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_E",
+     "pubversion": 3,
+     "start_ns": 535943505430000000,
+     "end_ns": 535943606180000000,
+     "rate": 20.0,
+     "sampletype": "i",
+     "samplecnt": 2016,
+     "sha256": "7b6c8328b68c57045b52e4ae25929823ffc17ee8c8e336d3693d76376e871332"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 4096,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_E",
+     "flags": 0,
+     "start_ns": 535943505430000000,
+     "end_ns": 535943606180000000,
+     "rate": 20.0,
+     "encoding": 16,
+     "pubversion": 3,
+     "samplecnt": 2016,
+     "crc": null,
+     "extra": {}
+    }
+   ]
+  },
+  "testdata-encoding-DWWSSN.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__L_H_E",
+     "pubversion": 4,
+     "start_ns": 346550400320000000,
+     "end_ns": 346552415320000000,
+     "rate": 1.0,
+     "sampletype": "i",
+     "samplecnt": 2016,
+     "sha256": "d531500f9184fa5e29269af06833edc92e74cba62a8a5d2e58209f2d3029ea12"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 4096,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__L_H_E",
+     "flags": 0,
+     "start_ns": 346550400320000000,
+     "end_ns": 346552415320000000,
+     "rate": 1.0,
+     "encoding": 32,
+     "pubversion": 4,
+     "samplecnt": 2016,
+     "crc": null,
+     "extra": {}
+    }
+   ]
+  },
+  "testdata-encoding-GEOSCOPE-16bit-3exp-encoded.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__V_H_E",
+     "pubversion": 2,
+     "start_ns": 535947125864800000,
+     "end_ns": 535967275864800000,
+     "rate": 0.1,
+     "sampletype": "f",
+     "samplecnt": 2016,
+     "sha256": "c121a7761853e9399a4b436d11c2b13f700965618e5eccb5a2a07a614c7fce46"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 4096,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__V_H_E",
+     "flags": 0,
+     "start_ns": 535947125864800000,
+     "end_ns": 535967275864800000,
+     "rate": 0.1,
+     "encoding": 14,
+     "pubversion": 2,
+     "samplecnt": 2016,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    }
+   ]
+  },
+  "testdata-encoding-SRO.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__L_H_E",
+     "pubversion": 4,
+     "start_ns": 157248000500000000,
+     "end_ns": 157249983500000000,
+     "rate": 1.0,
+     "sampletype": "i",
+     "samplecnt": 1984,
+     "sha256": "ef30bb1d36dae2417c6a88e4c0e1f278a1d3974f9179b4d0fabd9e7ffb848318"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 4096,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__L_H_E",
+     "flags": 0,
+     "start_ns": 157248000500000000,
+     "end_ns": 157249983500000000,
+     "rate": 1.0,
+     "encoding": 30,
+     "pubversion": 4,
+     "samplecnt": 1984,
+     "crc": null,
+     "extra": {}
+    }
+   ]
+  },
+  "testdata-invalid-blockette-offsets.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "pubversion": 4,
+     "start_ns": 1267253400069500000,
+     "end_ns": 1267253808069539000,
+     "rate": 1.0,
+     "sampletype": "i",
+     "samplecnt": 409,
+     "sha256": "782c6d40c2077e51c4b247c7b805c560561cc6e863d4ec07aa999fca5538b535"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267253400069500000,
+     "end_ns": 1267253511069500000,
+     "rate": 1.0,
+     "encoding": 10,
+     "pubversion": 4,
+     "samplecnt": 112,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267253512069541000,
+     "end_ns": 1267253696069541000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 185,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:IU_COLA_00_L_H_Z",
+     "flags": 4,
+     "start_ns": 1267253697069539000,
+     "end_ns": 1267253808069539000,
+     "rate": 1.0,
+     "encoding": 11,
+     "pubversion": 4,
+     "samplecnt": 112,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 100
+       }
+      }
+     }
+    }
+   ]
+  },
+  "testdata-no-blockette1000-steim1.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST__B_H_E",
+     "pubversion": 2,
+     "start_ns": 811728018238400000,
+     "end_ns": 811728383788500000,
+     "rate": 20.0,
+     "sampletype": "i",
+     "samplecnt": 7312,
+     "sha256": "2342254b7c4d20a53f911122a2290ed9e640262d81e7547355e65240893b36b8"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 4096,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_E",
+     "flags": 0,
+     "start_ns": 811728018238400000,
+     "end_ns": 811728199788400000,
+     "rate": 20.0,
+     "encoding": 10,
+     "pubversion": 2,
+     "samplecnt": 3632,
+     "crc": null,
+     "extra": {}
+    },
+    {
+     "reclen": 4096,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST__B_H_E",
+     "flags": 0,
+     "start_ns": 811728199838500000,
+     "end_ns": 811728383788500000,
+     "rate": 20.0,
+     "encoding": 10,
+     "pubversion": 2,
+     "samplecnt": 3680,
+     "crc": null,
+     "extra": {}
+    }
+   ]
+  },
+  "testdata-oneseries-mixedlengths-mixedorder.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST_00_L_H_Z",
+     "pubversion": 1,
+     "start_ns": 1267253400069539000,
+     "end_ns": 1267257351069539000,
+     "rate": 1.0,
+     "sampletype": "i",
+     "samplecnt": 3952,
+     "sha256": "1fbad7e3fc047694e6c8f2f28c16b46f8ad179f3646f98f13bb39606dda4f67e"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 128,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST_00_L_H_Z",
+     "flags": 0,
+     "start_ns": 1267253400069539000,
+     "end_ns": 1267253415069539000,
+     "rate": 1.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 16,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    },
+    {
+     "reclen": 1024,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST_00_L_H_Z",
+     "flags": 0,
+     "start_ns": 1267253576069539000,
+     "end_ns": 1267253815069539000,
+     "rate": 1.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 240,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    },
+    {
+     "reclen": 8192,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST_00_L_H_Z",
+     "flags": 0,
+     "start_ns": 1267255320069539000,
+     "end_ns": 1267257351069539000,
+     "rate": 1.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 2032,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    },
+    {
+     "reclen": 512,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST_00_L_H_Z",
+     "flags": 0,
+     "start_ns": 1267253464069539000,
+     "end_ns": 1267253575069539000,
+     "rate": 1.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 112,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    },
+    {
+     "reclen": 4096,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST_00_L_H_Z",
+     "flags": 0,
+     "start_ns": 1267254312069539000,
+     "end_ns": 1267255319069539000,
+     "rate": 1.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 1008,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    },
+    {
+     "reclen": 256,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST_00_L_H_Z",
+     "flags": 0,
+     "start_ns": 1267253416069539000,
+     "end_ns": 1267253463069539000,
+     "rate": 1.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 48,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    },
+    {
+     "reclen": 2048,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST_00_L_H_Z",
+     "flags": 0,
+     "start_ns": 1267253816069539000,
+     "end_ns": 1267254311069539000,
+     "rate": 1.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 496,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    }
+   ]
+  },
+  "testdata-oneseries-mixedlengths-mixedorder.mseed3": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST_00_L_H_Z",
+     "pubversion": 1,
+     "start_ns": 1267253400069539000,
+     "end_ns": 1267257351069539000,
+     "rate": 1.0,
+     "sampletype": "i",
+     "samplecnt": 3952,
+     "sha256": "1fbad7e3fc047694e6c8f2f28c16b46f8ad179f3646f98f13bb39606dda4f67e"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 156,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST_00_L_H_Z",
+     "flags": 0,
+     "start_ns": 1267253400069539000,
+     "end_ns": 1267253415069539000,
+     "rate": 1.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 16,
+     "crc": 251900073,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    },
+    {
+     "reclen": 1052,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST_00_L_H_Z",
+     "flags": 0,
+     "start_ns": 1267253576069539000,
+     "end_ns": 1267253815069539000,
+     "rate": 1.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 240,
+     "crc": 185473082,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    },
+    {
+     "reclen": 8220,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST_00_L_H_Z",
+     "flags": 0,
+     "start_ns": 1267255320069539000,
+     "end_ns": 1267257351069539000,
+     "rate": 1.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 2032,
+     "crc": 190860517,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    },
+    {
+     "reclen": 540,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST_00_L_H_Z",
+     "flags": 0,
+     "start_ns": 1267253464069539000,
+     "end_ns": 1267253575069539000,
+     "rate": 1.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 112,
+     "crc": 159259654,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    },
+    {
+     "reclen": 4124,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST_00_L_H_Z",
+     "flags": 0,
+     "start_ns": 1267254312069539000,
+     "end_ns": 1267255319069539000,
+     "rate": 1.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 1008,
+     "crc": 711782863,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    },
+    {
+     "reclen": 284,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST_00_L_H_Z",
+     "flags": 0,
+     "start_ns": 1267253416069539000,
+     "end_ns": 1267253463069539000,
+     "rate": 1.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 48,
+     "crc": 1931710142,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    },
+    {
+     "reclen": 2076,
+     "format_version": 3,
+     "sid": "FDSN:XX_TEST_00_L_H_Z",
+     "flags": 0,
+     "start_ns": 1267253816069539000,
+     "end_ns": 1267254311069539000,
+     "rate": 1.0,
+     "encoding": 3,
+     "pubversion": 1,
+     "samplecnt": 496,
+     "crc": 37762906,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Quality": 0
+       }
+      }
+     }
+    }
+   ]
+  },
+  "testdata-unapplied-timecorrection.mseed2": {
+   "segments": [
+    {
+     "sid": "FDSN:XX_TEST_00_B_H_Z",
+     "pubversion": 1,
+     "start_ns": 1054174403043400000,
+     "end_ns": 1054174552518400000,
+     "rate": 40.0,
+     "sampletype": "i",
+     "samplecnt": 5980,
+     "sha256": "685ae0e8c0947673c400039e835ff6b82fa07fc26f7d7a1b133a4fd798e2546e"
+    }
+   ],
+   "records": [
+    {
+     "reclen": 4096,
+     "format_version": 2,
+     "sid": "FDSN:XX_TEST_00_B_H_Z",
+     "flags": 0,
+     "start_ns": 1054174403043400000,
+     "end_ns": 1054174552518400000,
+     "rate": 40.0,
+     "encoding": 11,
+     "pubversion": 1,
+     "samplecnt": 5980,
+     "crc": null,
+     "extra": {
+      "FDSN": {
+       "Time": {
+        "Correction": 1.0
+       }
+      }
+     }
+    }
+   ]
+  }
+ }
+}
