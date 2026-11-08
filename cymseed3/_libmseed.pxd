@@ -43,6 +43,8 @@ cdef extern from "libmseed.h" nogil:
     uint32_t MSF_UNPACKDATA
     uint32_t MSF_VALIDATECRC
     uint32_t MSF_ATENDOFFILE
+    uint32_t MSF_FLUSHDATA
+    uint32_t MSF_PACKVER2
 
     ctypedef enum ms_timeformat_t:
         ISOMONTHDAY_Z
@@ -105,6 +107,10 @@ cdef extern from "libmseed.h" nogil:
     int64_t ms3_detect(const char *record, uint64_t recbuflen,
                        uint8_t *formatversion)
     double msr3_sampratehz(const MS3Record *msr)
+    int msr3_pack(const MS3Record *msr,
+                  void (*record_handler)(char *, int, void *),
+                  void *handlerdata, int64_t *packedsamples, uint32_t flags,
+                  int8_t verbose)
     nstime_t msr3_endtime(const MS3Record *msr)
 
     # -- trace lists ----------------------------------------------------

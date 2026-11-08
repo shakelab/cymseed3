@@ -16,16 +16,18 @@
 # with this download. If not, see <http://www.gnu.org/licenses/>
 # ****************************************************************************
 """
-MiniSEED 2 and 3 reading with libmseed.
+MiniSEED 2 and 3 reading and writing with libmseed.
 
-Two levels of access share the same parser:
+Two levels of access share the same parser and packer:
 
 - :class:`MiniSeed` joins the records into contiguous segments, one
   list per source identifier, as libmseed does (:meth:`MiniSeed.read`,
-  :meth:`MiniSeed.segments`);
+  :meth:`MiniSeed.segments`), and writes segments
+  (:meth:`MiniSeed.add`, :meth:`MiniSeed.write`);
 - :func:`iter_records` returns the records one at a time
   (:class:`MSRecord`), with their header, extra headers and raw bytes,
-  decoding the samples only on request.
+  decoding the samples only on request; :func:`pack_records` packs one
+  series of samples into records with chosen header fields.
 
 Sources are paths (read through ``mmap``), ``bytes`` (e.g. a file
 content or a SeedLink packet), ``bytearray``, ``memoryview``, ``mmap``
@@ -35,7 +37,9 @@ input is never copied.
 Samples are returned as ``array.array`` in their native type (``'i'``
 int32, ``'f'`` float32, ``'d'`` float64) or as ``bytes`` for text
 records. With NumPy, ``numpy.frombuffer(data, dtype=data.typecode)``
-gives an array without copies.
+gives an array without copies. Samples to write are int16, int32,
+float32 or float64 buffers (NumPy arrays, ``array.array``,
+``memoryview``), lists of numbers, or ``bytes`` for text.
 
 Times are integer nanoseconds since 1970-01-01 UTC. Invalid records and
 the warnings of libmseed are reported as :class:`MiniSeedWarning` and
@@ -76,6 +80,7 @@ __all__ = [
     "codes_to_sid",
     "iter_records",
     "ns_from_string",
+    "pack_records",
     "ns_to_string",
     "sid_to_codes",
 ]
@@ -89,6 +94,12 @@ LIBMSEED_VERSION = _libmseed.LIBMSEED_VERSION_STR
 
 # Encoding assumed by libmseed for MiniSEED 2 without blockette 1000.
 _STEIM1 = 10
+
+# Encodings that can be written, by sample type of libmseed.
+_ENCODINGS = {"i": (1, 3, 10, 11), "f": (4,), "d": (5,), "t": (0,)}
+
+# MiniSEED versions that can be written.
+_VERSIONS = (2, 3)
 
 # MiniSEED 3 record flags (MSRecord.flags).
 _FLAG_NAMES = {
@@ -312,16 +323,23 @@ class MiniSeed:
     contiguous within half a sample, as by libmseed; records without
     samples (e.g. detection or empty log records) are skipped.
 
+    The encoding used to write a trace is set by :meth:`add` for its
+    source identifier; traces without one (e.g. read from a file) are
+    written with the default of their sample type.
+
     Examples
     --------
     >>> ms = MiniSeed()
     >>> ms.read("day.mseed")  # doctest: +SKIP
     >>> for segment in ms.segments():  # doctest: +SKIP
     ...     print(segment.sid, segment.start_ns, len(segment.data))
+    >>> ms.add(("IV", "MODE", "", "HNZ"), 0, 100.0, [1, 2, 3])
+    >>> content = ms.write(version=3)
     """
 
     def __init__(self) -> None:
         self._traces = _libmseed.TraceList()
+        self._encodings: dict[str, int] = {}
 
     # -- reading --------------------------------------------------------
 
@@ -359,6 +377,135 @@ class MiniSeed:
             count, log = self._traces.read(buffer, bool(validate_crc))
         _warn(log)
         return count
+
+    # -- writing --------------------------------------------------------
+
+    def add(self, codes: Any, start_ns: int, rate: float, data: Any, *,
+            encoding: Optional[int] = None, pubversion: int = 1) -> None:
+        """
+        Add samples of one source identifier.
+
+        Samples contiguous with those of a segment of the same source
+        identifier are joined to it (copied by libmseed).
+
+        Parameters
+        ----------
+        codes : str or sequence of str
+            FDSN source identifier (``"FDSN:IV_MODE__H_N_Z"``) or the
+            network, station, location and channel codes.
+        start_ns : int
+            Time of the first sample, in ns since 1970-01-01 UTC.
+        rate : float
+            Sampling rate in Hz (0 for text).
+        data : buffer, list of numbers or bytes
+            Samples: int16, int32, float32 or float64 buffer (NumPy
+            array, ``array.array``, ``memoryview``), list of numbers
+            (int32 if all integers, otherwise float64) or ``bytes`` and
+            ``bytearray`` for text. int16 samples are stored as int32.
+        encoding : int, optional
+            Encoding of the source identifier when written: 1 (int16), 3
+            (int32), 10 (STEIM1) or 11 (STEIM2) for integers, 4 for
+            float32, 5 for float64, 0 for text. If None (default), the
+            encoding set by an earlier call, otherwise the default of
+            the data at writing: STEIM2 for integers whose differences
+            fit in 30 bits, STEIM1 if they fit in 32 bits, otherwise
+            int32; 4, 5 and 0 for the other types.
+        pubversion : int, optional
+            Publication version (0-255). Default is 1.
+
+        Raises
+        ------
+        TypeError
+            If an argument has a wrong type, or the samples a type that
+            MiniSEED cannot store (e.g. int64).
+        MiniSeedError
+            If a value is invalid, the encoding does not match the data
+            or differs from the one set for the same source identifier,
+            or libmseed cannot join the samples (e.g. integers added to
+            a float segment).
+        """
+        sid = _sid_of(codes)
+        start_ns = _check_time(start_ns)
+        rate = _check_rate(rate)
+        pubversion = _check_byte("pubversion", pubversion)
+        samples, sampletype = _samples_buffer(data)
+        if encoding is not None:
+            encoding = _check_encoding(encoding, sampletype)
+            previous = self._encodings.get(sid)
+            if previous is not None and previous != encoding:
+                raise MiniSeedError(
+                    f"{sid}: encoding {encoding} differs from the encoding "
+                    f"{previous} set before"
+                )
+        ok, log = self._traces.add(sid, start_ns, rate, pubversion,
+                                   sampletype, samples)
+        if not ok:
+            raise MiniSeedError(_join(log) or f"{sid}: samples not added")
+        _warn(log)
+        if encoding is not None:
+            self._encodings[sid] = encoding
+
+    def write(self, target: Any = None, *, version: int = 2,
+              reclen: int = 512, owrite: bool = False) -> Optional[bytes]:
+        """
+        Pack all the segments into MiniSEED records.
+
+        Segments are written sorted by source identifier and time, each
+        with the encoding of its source identifier (see :meth:`add`).
+
+        Parameters
+        ----------
+        target : str or path-like, optional
+            Output file. If None (default), the records are returned.
+        version : {2, 3}, optional
+            MiniSEED version. Default is 2.
+        reclen : int, optional
+            Record length in bytes: a power of two from 128 to 131072 for
+            MiniSEED 2, the maximum length for MiniSEED 3. Default is
+            512.
+        owrite : bool, optional
+            If True, overwrite an existing file. Default is False.
+
+        Returns
+        -------
+        bytes or None
+            The records, or None if written to ``target``.
+
+        Raises
+        ------
+        TypeError
+            If an argument has a wrong type.
+        MiniSeedError
+            If the version or the record length is invalid, or libmseed
+            cannot pack a segment (e.g. integer differences beyond 30
+            bits with STEIM2).
+        FileExistsError
+            If ``target`` exists and ``owrite`` is False.
+
+        Notes
+        -----
+        MiniSEED 2 stores times to the microsecond: libmseed rounds the
+        nanoseconds (MiniSEED 3 keeps them).
+        """
+        version, reclen = _check_format(version, reclen)
+        if target is not None:
+            if not isinstance(target, (str, os.PathLike)):
+                raise TypeError(
+                    "target must be a path, not "
+                    f"{type(target).__name__}"
+                )
+            if not owrite and os.path.exists(target):
+                raise FileExistsError(f"File exists: {target}")
+        content, log = self._traces.pack(dict(self._encodings), version,
+                                         reclen)
+        if content is None:
+            raise MiniSeedError(_join(log) or "cannot pack the segments")
+        _warn(log)
+        if target is None:
+            return content
+        with open(target, "wb" if owrite else "xb") as fid:
+            fid.write(content)
+        return None
 
     # -- access ---------------------------------------------------------
 
@@ -403,11 +550,12 @@ class MiniSeed:
         list of str
             One identifier per trace.
         """
-        return sorted({fields[0] for fields in self._traces.segments()})
+        return sorted(self._traces.sids())
 
     def clear(self) -> None:
-        """Remove all the segments."""
+        """Remove all the segments and the encodings set by add()."""
         self._traces.clear()
+        self._encodings.clear()
 
     # -- summary --------------------------------------------------------
 
@@ -623,9 +771,167 @@ def iter_records(source: Any, *, unpack: bool = False,
             del scanner
 
 
+def pack_records(codes: Any, start_ns: int, rate: float, data: Any, *,
+                 version: int = 2, reclen: int = 512,
+                 encoding: Optional[int] = None, pubversion: int = 1,
+                 flags: int = 0,
+                 extra: Optional[dict] = None) -> list[MSRecord]:
+    """
+    Pack one series of samples into MiniSEED records.
+
+    Unlike :meth:`MiniSeed.write`, the record header fields can be set:
+    flags and extra headers are written in every record.
+
+    Parameters
+    ----------
+    codes : str or sequence of str
+        FDSN source identifier or the four codes.
+    start_ns : int
+        Time of the first sample, in ns since 1970-01-01 UTC.
+    rate : float
+        Sampling rate in Hz (0 for text).
+    data : buffer, list of numbers or bytes
+        Samples, as in :meth:`MiniSeed.add`; empty for a record with
+        header only.
+    version : {2, 3}, optional
+        MiniSEED version. Default is 2.
+    reclen : int, optional
+        Record length in bytes (maximum length for MiniSEED 3). Default
+        is 512.
+    encoding : int, optional
+        Encoding; the default of the data if None (see
+        :meth:`MiniSeed.add`).
+    pubversion : int, optional
+        Publication version (0-255; in MiniSEED 2 the data quality code:
+        1 R, 2 D, 3 Q, 4 M). Default is 1.
+    flags : int, optional
+        MiniSEED 3 record flags (0-255): bit 0 calibration signals
+        present, bit 1 time tag questionable, bit 2 clock locked.
+        Default is 0.
+    extra : dict, optional
+        Extra headers (FDSN namespace and others). For MiniSEED 2,
+        libmseed writes the FDSN fields it knows as fixed header fields
+        and blockettes (e.g. ``{"FDSN": {"Time": {"Quality": 100}}}``
+        as blockette 1001).
+
+    Returns
+    -------
+    list of MSRecord
+        The records; their offsets are relative to the joined records
+        (``b"".join(record.raw for record in records)``).
+
+    Raises
+    ------
+    TypeError
+        If an argument has a wrong type.
+    MiniSeedError
+        If a value is invalid, the encoding does not match the data or
+        libmseed cannot pack the samples.
+
+    Notes
+    -----
+    MiniSEED 2 stores times to the microsecond: libmseed rounds the
+    nanoseconds (MiniSEED 3 keeps them).
+    """
+    sid = _sid_of(codes)
+    start_ns = _check_time(start_ns)
+    rate = _check_rate(rate)
+    version, reclen = _check_format(version, reclen)
+    pubversion = _check_byte("pubversion", pubversion)
+    flags = _check_byte("flags", flags)
+    samples, sampletype = _samples_buffer(data)
+    encoding = (-1 if encoding is None
+                else _check_encoding(encoding, sampletype))
+    if extra is None:
+        extra_json = b""
+    elif isinstance(extra, dict):
+        extra_json = json.dumps(extra, separators=(",", ":")).encode()
+    else:
+        raise TypeError(f"extra must be a dict, not {type(extra).__name__}")
+    content, log = _libmseed.pack_samples(
+        sid, start_ns, rate, pubversion, sampletype, samples, encoding,
+        version, reclen, flags, extra_json,
+    )
+    if content is None:
+        raise MiniSeedError(_join(log) or f"{sid}: samples not packed")
+    _warn(log)
+    return list(iter_records(content))
+
+
 # ----------------------------------------------------------------------------
 # Helpers
 # ----------------------------------------------------------------------------
+
+
+def _check_byte(name: str, value: Any) -> int:
+    """Validate an integer from 0 to 255."""
+    value = _check_int(name, value)
+    if not 0 <= value <= 255:
+        raise MiniSeedError(f"{name} must be from 0 to 255, not {value}")
+    return value
+
+
+def _check_encoding(encoding: Any, sampletype: str) -> int:
+    """Validate an encoding for a sample type."""
+    encoding = _check_int("encoding", encoding)
+    allowed = _ENCODINGS[sampletype]
+    if encoding not in allowed:
+        kind = {"i": "integer", "f": "float32", "d": "float64",
+                "t": "text"}[sampletype]
+        raise MiniSeedError(
+            f"encoding {encoding} cannot store {kind} samples (allowed: "
+            f"{', '.join(str(code) for code in allowed)})"
+        )
+    return encoding
+
+
+def _check_format(version: Any, reclen: Any) -> tuple[int, int]:
+    """Validate the MiniSEED version and the record length."""
+    version = _check_int("version", version)
+    reclen = _check_int("reclen", reclen)
+    if version not in _VERSIONS:
+        raise MiniSeedError(f"MiniSEED version must be 2 or 3, not "
+                            f"{version}")
+    if version == 2 and (reclen < 128 or reclen > 131072
+                         or reclen & (reclen - 1)):
+        raise MiniSeedError(
+            "MiniSEED 2 record length must be a power of two from 128 to "
+            f"131072, not {reclen}"
+        )
+    if version == 3 and not 40 <= reclen <= 10485760:
+        raise MiniSeedError(
+            "MiniSEED 3 record length must be from 40 to 10485760, not "
+            f"{reclen}"
+        )
+    return version, reclen
+
+
+def _check_int(name: str, value: Any) -> int:
+    """Validate an integer argument (not bool)."""
+    if not isinstance(value, int) or isinstance(value, bool):
+        raise TypeError(
+            f"{name} must be an integer, not {type(value).__name__}"
+        )
+    return value
+
+
+def _check_time(start_ns: Any) -> int:
+    """Validate a time in ns (signed 64-bit)."""
+    start_ns = _check_int("start_ns", start_ns)
+    if not -(2**63) < start_ns < 2**63:
+        raise MiniSeedError(f"start_ns out of the int64 range: {start_ns}")
+    return start_ns
+
+
+def _check_rate(rate: Any) -> float:
+    """Validate a sampling rate in Hz."""
+    if not isinstance(rate, (int, float)) or isinstance(rate, bool):
+        raise TypeError(f"rate must be a number, not {type(rate).__name__}")
+    rate = float(rate)
+    if not 0.0 <= rate < float("inf"):
+        raise MiniSeedError(f"rate must be finite and not negative, not "
+                            f"{rate}")
+    return rate
 
 
 def _check_codes(codes: Any) -> tuple[str, str, str, str]:
@@ -669,6 +975,62 @@ def _open_buffer(source: Any) -> Iterator[Any]:
                 yield flat
         else:
             yield view
+
+
+def _samples_buffer(data: Any) -> tuple[Any, str]:
+    """
+    Return the raw samples (contiguous bytes) and the libmseed sample
+    type ('i', 'f', 'd' or 't') of data to write.
+    """
+    if isinstance(data, (bytes, bytearray)):
+        return data, "t"
+    if isinstance(data, str):
+        raise TypeError("text samples must be bytes, not str")
+    if isinstance(data, (list, tuple)):
+        if all(isinstance(value, int) and not isinstance(value, bool)
+               for value in data):
+            try:
+                values = array.array("i", data)
+            except OverflowError:
+                raise MiniSeedError(
+                    "integer samples out of the int32 range"
+                ) from None
+            return memoryview(values).cast("B"), "i"
+        if all(isinstance(value, (int, float))
+               and not isinstance(value, bool) for value in data):
+            return memoryview(array.array("d", data)).cast("B"), "d"
+        raise TypeError("sample lists must hold numbers only")
+    try:
+        view = memoryview(data)
+    except TypeError:
+        raise TypeError(
+            "data must be a buffer, a list of numbers or bytes, not "
+            f"{type(data).__name__}"
+        ) from None
+    if view.ndim != 1 or not view.c_contiguous:
+        raise TypeError("sample buffers must be one-dimensional and "
+                        "contiguous")
+    code = view.format.lstrip("@=")
+    if code in ("h", "i", "l", "q") and view.itemsize == 2:
+        return memoryview(array.array("i", view)).cast("B"), "i"
+    if code in ("h", "i", "l", "q") and view.itemsize == 4:
+        return view.cast("B"), "i"
+    if code == "f" and view.itemsize == 4:
+        return view.cast("B"), "f"
+    if code == "d" and view.itemsize == 8:
+        return view.cast("B"), "d"
+    raise TypeError(
+        f"unsupported sample type {view.format!r} (itemsize "
+        f"{view.itemsize}): use int16, int32, float32, float64 or bytes"
+    )
+
+
+def _sid_of(codes: Any) -> str:
+    """Return the source identifier of a sid or of four codes."""
+    if isinstance(codes, str):
+        sid_to_codes(codes)
+        return codes
+    return codes_to_sid(codes)
 
 
 def _join(log: list) -> str:

@@ -21,12 +21,24 @@ Version 0.2.0 rewrites the interface; it is not compatible with 0.1.x.
   records one at a time as `MSRecord` objects (offset, length, format
   version, header fields, MiniSEED 3 flags, CRC, extra headers as a
   dictionary, raw bytes, samples decoded on request, `info()`).
+- `MiniSeed.add(codes, start_ns, rate, data, encoding=None,
+  pubversion=1)` adds int16, int32, float32 or float64 buffers (NumPy
+  arrays, `array.array`, `memoryview`), lists of numbers or text bytes;
+  `MiniSeed.write(target=None, version=2, reclen=512, owrite=False)`
+  packs all the segments into MiniSEED 2 or 3 bytes or a file, each
+  source identifier with its own encoding (by default STEIM2, STEIM1 or
+  int32 from the sample differences, 4 for float32, 5 for float64, 0
+  for text).
+- `pack_records(codes, start_ns, rate, data, ...)` packs one series
+  into records with chosen record length, encoding, publication
+  version, flags and extra headers (written as blockettes in
+  MiniSEED 2), returned as `MSRecord` objects.
 - `sid_to_codes`, `codes_to_sid`, `ns_to_string`, `ns_from_string`.
 - `MiniSeedError` (a `ValueError`) and `MiniSeedWarning` (a
   `UserWarning`); the messages of libmseed are issued as warnings with
   the offset of the record.
 - Tests against the libmseed file readers on the 46 libmseed test
-  files.
+  files, and round trips of all the encodings in MiniSEED 2 and 3.
 
 ### Changed
 
@@ -49,9 +61,8 @@ Version 0.2.0 rewrites the interface; it is not compatible with 0.1.x.
 
 ### Removed
 
-- `MiniSeed.export_records`, `MiniSeed.import_record`, `MiniSeed.write`
-  (writing returns in the next block with `MiniSeed.add`,
-  `MiniSeed.write` and `pack_records`), `MiniSeed.numtraceids`,
+- `MiniSeed.export_records` and `MiniSeed.import_record` (replaced by
+  `MiniSeed.segments` and `MiniSeed.add`), `MiniSeed.numtraceids`,
   `MiniSeed.print`, the `convert_*` time functions and `example.py`.
 
 ### Fixed
@@ -63,3 +74,10 @@ Version 0.2.0 rewrites the interface; it is not compatible with 0.1.x.
   read-only `mmap`).
 - The last MiniSEED 2 record of a buffer without blockette 1000 is read
   (as libmseed does at the end of a file).
+- Floating-point and int16 samples were written through an int32
+  buffer (float values corrupted, reading beyond the buffer for
+  float64); one integer encoding was used for the whole file.
+- int16 encoding of values outside the int16 range (silently truncated
+  by libmseed) is an error.
+- Invalid start times produced unreadable files without error (times
+  are now integer nanoseconds, checked before writing).

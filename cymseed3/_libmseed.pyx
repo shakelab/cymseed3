@@ -34,7 +34,7 @@ Samples are returned as ``array.array`` (``'i'``, ``'f'``, ``'d'``) or
 import threading
 
 from cpython cimport array
-from libc.stdint cimport int64_t, uint8_t, uint32_t, uint64_t
+from libc.stdint cimport int32_t, int64_t, uint8_t, uint32_t, uint64_t
 from libc.string cimport memcpy, memset
 
 import array as _array
@@ -133,6 +133,152 @@ cdef bint _all_zero(const unsigned char *data, uint64_t size):
         if data[i]:
             return False
     return True
+
+
+# ----------------------------------------------------------------------------
+# Writing helpers
+# ----------------------------------------------------------------------------
+
+cdef void _record_handler(char *record, int length, void *data) noexcept nogil:
+    # Append each packed record to the bytearray passed as data.
+    with gil:
+        (<bytearray>data).extend(record[:length])
+
+
+cdef int _sample_size(char sampletype):
+    if sampletype == b"t":
+        return 1
+    if sampletype == b"d":
+        return 8
+    return 4
+
+
+cdef int _default_encoding(char sampletype, const void *data, int64_t count):
+    """
+    Encoding for a sample type: STEIM2 for integers whose differences
+    fit in 30 bits, STEIM1 if they fit in 32 bits, otherwise int32.
+    """
+    cdef const int32_t *values = <const int32_t *>data
+    cdef int64_t i
+    cdef int64_t diff
+    cdef int64_t low = 0
+    cdef int64_t high = 0
+    if sampletype == b"t":
+        return 0
+    if sampletype == b"f":
+        return 4
+    if sampletype == b"d":
+        return 5
+    for i in range(1, count):
+        diff = <int64_t>values[i] - <int64_t>values[i - 1]
+        if diff < low:
+            low = diff
+        elif diff > high:
+            high = diff
+    if low >= -(1 << 29) and high < (1 << 29):
+        return 11
+    if low >= -(<int64_t>1 << 31) and high < (<int64_t>1 << 31):
+        return 10
+    return 3
+
+
+cdef bint _fits_int16(const void *data, int64_t count):
+    cdef const int32_t *values = <const int32_t *>data
+    cdef int64_t i
+    for i in range(count):
+        if values[i] < -32768 or values[i] > 32767:
+            return False
+    return True
+
+
+cdef tuple _pack(str sid, int64_t start_ns, double rate, int pubversion,
+                 char sampletype, const void *data, int64_t count,
+                 int encoding, int version, int reclen, int flags,
+                 bytes extra, bytearray output):
+    """
+    Pack samples into records appended to ``output`` (msr3_pack).
+
+    A negative encoding selects the default of the sample type.
+
+    Returns
+    -------
+    tuple
+        True on success, and the messages.
+    """
+    cdef MS3Record *msr
+    cdef int64_t packed = 0
+    cdef int records
+    cdef uint32_t pack_flags = MSF_FLUSHDATA
+    encoded_sid = sid.encode("ascii", "replace")
+    if len(encoded_sid) >= 64:
+        return False, [(2, f"source identifier longer than 63 characters: "
+                           f"{sid}")]
+    if encoding < 0:
+        encoding = _default_encoding(sampletype, data, count)
+    if encoding == 1 and not _fits_int16(data, count):
+        return False, [(2, f"{sid}: samples out of the int16 range for "
+                           "encoding 1")]
+    msr = msr3_init(NULL)
+    if msr == NULL:
+        raise MemoryError("cannot allocate a libmseed record")
+    memcpy(msr.sid, <const char *>encoded_sid, len(encoded_sid) + 1)
+    msr.formatversion = version
+    if version == 2:
+        pack_flags |= MSF_PACKVER2
+    msr.starttime = start_ns
+    msr.samprate = rate
+    msr.pubversion = pubversion
+    msr.flags = flags
+    msr.encoding = encoding
+    msr.reclen = reclen
+    # The samples and the extra headers are borrowed: msr3_pack only
+    # reads them, and they are detached before msr3_free.
+    msr.datasamples = <void *>data
+    msr.numsamples = count
+    msr.samplecnt = count
+    msr.sampletype = sampletype
+    msr.datasize = <uint64_t>count * _sample_size(sampletype)
+    if extra:
+        msr.extra = <char *>extra
+        msr.extralength = len(extra)
+    log = _start_log()
+    try:
+        records = msr3_pack(msr, _record_handler, <void *>output, &packed,
+                            pack_flags, 0)
+    finally:
+        msr.datasamples = NULL
+        msr.extra = NULL
+        msr.extralength = 0
+        msr3_free(&msr)
+    if records < 0 or packed != count:
+        if not log:
+            log.append((2, f"{sid}: {packed} of {count} samples packed"))
+        return False, log
+    return True, log
+
+
+def pack_samples(str sid, int64_t start_ns, double rate, int pubversion,
+                 str sampletype, const unsigned char[::1] samples,
+                 int encoding, int version, int reclen, int flags,
+                 bytes extra):
+    """
+    Pack one series of samples into records.
+
+    ``samples`` holds the raw samples (int32, float32, float64 or text
+    bytes, as ``sampletype``); a negative encoding selects the default.
+
+    Returns
+    -------
+    tuple
+        The records (``bytes``, None on error) and the messages.
+    """
+    cdef char kind = ord(sampletype)
+    cdef int64_t count = samples.shape[0] // _sample_size(kind)
+    cdef const void *data = <const void *>&samples[0] if count else NULL
+    output = bytearray()
+    ok, log = _pack(sid, start_ns, rate, pubversion, kind, data, count,
+                    encoding, version, reclen, flags, extra, output)
+    return (bytes(output) if ok else None), log
 
 
 # ----------------------------------------------------------------------------
@@ -402,6 +548,98 @@ cdef class TraceList:
                              segment.sampletype),
                 ))
                 segment = segment.next
+            trace = trace.next[0]
+        return result
+
+    def add(self, str sid, int64_t start_ns, double rate, int pubversion,
+            str sampletype, const unsigned char[::1] samples):
+        """
+        Add samples to the trace list (copied by libmseed).
+
+        Returns
+        -------
+        tuple
+            True on success, and the messages.
+        """
+        cdef MS3Record *msr
+        cdef char kind = ord(sampletype)
+        cdef int64_t count = samples.shape[0] // _sample_size(kind)
+        cdef MS3TraceSeg *segment
+        encoded_sid = sid.encode("ascii", "replace")
+        if len(encoded_sid) >= 64:
+            return False, [(2, f"source identifier longer than 63 "
+                               f"characters: {sid}")]
+        if count == 0:
+            return True, []
+        msr = msr3_init(NULL)
+        if msr == NULL:
+            raise MemoryError("cannot allocate a libmseed record")
+        memcpy(msr.sid, <const char *>encoded_sid, len(encoded_sid) + 1)
+        msr.starttime = start_ns
+        msr.samprate = rate
+        msr.pubversion = pubversion
+        msr.datasamples = <void *>&samples[0]
+        msr.numsamples = count
+        msr.samplecnt = count
+        msr.sampletype = kind
+        msr.datasize = <uint64_t>count * _sample_size(kind)
+        log = _start_log()
+        try:
+            segment = mstl3_addmsr_recordptr(self._mstl, msr, NULL, 0, 1, 0,
+                                             NULL)
+        finally:
+            msr.datasamples = NULL
+            msr3_free(&msr)
+        if segment == NULL:
+            if not log:
+                log.append((2, f"{sid}: samples not added"))
+            return False, log
+        return True, log
+
+    def pack(self, dict encodings, int version, int reclen):
+        """
+        Pack all the segments, sorted by source identifier and time.
+
+        ``encodings`` maps source identifiers to encodings; the others
+        take the default of their sample type.
+
+        Returns
+        -------
+        tuple
+            The records (``bytes``, None on error) and the messages.
+        """
+        cdef MS3TraceID *trace = self._mstl.traces.next[0]
+        cdef MS3TraceSeg *segment
+        output = bytearray()
+        items = []
+        while trace != NULL:
+            sid = _decode(trace.sid)
+            segment = trace.first
+            while segment != NULL:
+                items.append((sid, segment.starttime, trace.pubversion,
+                              <size_t>segment))
+                segment = segment.next
+            trace = trace.next[0]
+        items.sort(key=lambda item: (item[0], item[1]))
+        messages = []
+        for sid, _, pubversion, address in items:
+            segment = <MS3TraceSeg *><size_t>address
+            ok, log = _pack(sid, segment.starttime, segment.samprate,
+                            pubversion, segment.sampletype,
+                            segment.datasamples, segment.numsamples,
+                            encodings.get(sid, -1), version, reclen, 0,
+                            None, output)
+            messages.extend(log)
+            if not ok:
+                return None, messages
+        return bytes(output), messages
+
+    def sids(self):
+        """Return the source identifiers of the traces."""
+        cdef MS3TraceID *trace = self._mstl.traces.next[0]
+        result = []
+        while trace != NULL:
+            result.append(_decode(trace.sid))
             trace = trace.next[0]
         return result
 

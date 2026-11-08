@@ -34,6 +34,7 @@ from cymseed3.miniseed import (
     iter_records,
     ns_from_string,
     ns_to_string,
+    pack_records,
     sid_to_codes,
 )
 
@@ -49,6 +50,7 @@ __all__ = [
     "iter_records",
     "ns_from_string",
     "ns_to_string",
+    "pack_records",
     "sid_to_codes",
 ]
 
