@@ -1,36 +1,60 @@
 [build-system]
-requires = ["setuptools>=42", "wheel", "cython>=3.0"]
+requires = ["setuptools>=77", "cython>=3.1"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "cymseed3"
 version = "0.2.0.dev0"
-description = "A Python package for reading and writing miniseed files using libmseed 3."
-authors = [
-    { name = "Valerio Poggi", email = "vpoggi@ogs.it" }
-]
-license = { text = "GPLv3" }
+description = "Read and write MiniSEED 2 and 3 with libmseed"
 readme = "README.md"
-requires-python = ">=3.6"
-keywords = ["miniseed", "libmseed", "seismic", "data", "processing"]
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "Programming Language :: C",
-    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
-    "Operating System :: OS Independent",
-    "Development Status :: 4 - Beta",
-    "Intended Audience :: Developers",
-    "Intended Audience :: Science/Research",
-    "Topic :: Software Development :: Libraries",
-    "Topic :: Scientific/Engineering"
+license = "LGPL-3.0-or-later AND Apache-2.0"
+license-files = [
+    "COPYING",
+    "COPYING.LESSER",
+    "earthscope/libmseed-*/LICENSE",
 ]
+authors = [
+    { name = "Valerio Poggi", email = "vpoggi@ogs.it" },
+]
+maintainers = [{ name = "ShakeLab developers" }]
+keywords = ["miniseed", "libmseed", "seismology", "seismic data"]
+requires-python = ">=3.10"
+dependencies = []
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "Programming Language :: C",
+    "Programming Language :: Cython",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Typing :: Typed",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=6.0"]
 
 [project.urls]
-"Homepage" = "https://github.com/shakelab/cymseed3"
+source = "https://github.com/shakelab/cymseed3"
+issues = "https://github.com/shakelab/cymseed3/issues"
+libmseed = "https://github.com/EarthScope/libmseed"
 
 [tool.setuptools]
+packages = ["cymseed3"]
 zip-safe = false
 
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["cymseed3"]
+[tool.setuptools.package-data]
+cymseed3 = ["py.typed", "*.pyx", "*.pxd"]
+
+[tool.setuptools.exclude-package-data]
+cymseed3 = ["*.c"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,126 +1,129 @@
-# CyMSeed3
+# cymseed3
 
- `cymseed3` is a Python package for reading and writing MiniSEED files using the `libmseed` library version 3 (currently 3.5.4). This package provides a simple and efficient interface for handling seismic data in the MiniSEED format, making it easy to import, export, and manipulate seismic records.
+`cymseed3` reads and writes MiniSEED 2 and 3 in Python with
+[libmseed](https://github.com/EarthScope/libmseed) (EarthScope), the
+reference C library of the format, bundled in the package (currently
+version 3.5.4).
 
- ## Features
+- Reading of files, `bytes` and other buffers (e.g. SeedLink packets),
+  without copies and in linear time; records joined into contiguous
+  segments, or one record at a time with all its header fields.
+- Writing of int16, int32, float32, float64 and text samples in every
+  MiniSEED encoding (STEIM1, STEIM2, integers, floats, text), each
+  channel with its own encoding.
+- Samples as `array.array` in their native type, times as integer
+  nanoseconds (the full precision of MiniSEED 3).
+- No dependency besides the Python standard library; NumPy arrays are
+  accepted and returned without copies.
 
- - **Read MiniSEED Files**: Import data from MiniSEED files into Python objects for easy manipulation.
- - **Write MiniSEED Files**: Export seismic data to MiniSEED format files.
- - **Data Export**: Convert MiniSEED data to Python dictionaries for integration with other tools and workflows.
- - **Support for Multiple Data Encodings**: Handle various data encodings supported by the `libmseed` library.
+cymseed3 is part of the [ShakeLab](https://github.com/shakelab/shakelab)
+ecosystem, where it is the default MiniSEED backend, but it can be used
+on its own.
 
- ## Installation
-
-### Prerequisites
-
-Ensure you have Python 3.6 or higher installed. Additionally, you'll need `setuptools`, `wheel`, and `cython` for building the package if you are installing from source.
-
-### Installing cymseed3 from PyPI
-
-The easiest way to install `cymseed3` is via [PyPI](https://pypi.org/project/cymseed3/), using `pip`. This will download and install the latest version of the package, including all dependencies.
+## Installation
 
 ```bash
 pip install cymseed3
 ```
 
-This command will automatically handle the installation of all required dependencies, making it the preferred method for most users.
+Python 3.10 or later on Linux or macOS is required. The package is
+built from source, so a C compiler is needed (on macOS, the Xcode
+command line tools: `xcode-select --install`).
 
-### Installing cymseed3 from Source
+From the repository, for development:
 
-If you want to install `cymseed3` from source, for example, to modify the code or contribute to development, follow these steps:
+```bash
+git clone https://github.com/shakelab/cymseed3.git
+cd cymseed3
+pip install -e ".[dev]"
+pytest
+```
 
-1. **Clone the Repository**: Start by cloning the repository from GitHub.
+## Usage
 
-  ```bash
-  git clone https://github.com/shakelab/cymseed3.git
-  cd cymseed3
-  ```
+### Reading segments
 
-2. **Install Dependencies**: Make sure to install necessary build tools and dependencies:
+```python
+from cymseed3 import MiniSeed, ns_to_string
 
-  ```bash
-  pip install setuptools wheel cython
-  ```
+ms = MiniSeed()
+ms.read("day.mseed")             # path, bytes, buffer or binary file
+for segment in ms.segments():    # sorted by source identifier and time
+    print(segment.sid,           # "FDSN:IV_MODE__H_N_Z"
+          segment.codes,         # ("IV", "MODE", "", "HNZ")
+          ns_to_string(segment.start_ns),
+          segment.rate,          # Hz
+          len(segment.data))     # array.array('i', 'f' or 'd')
 
-3. **Build and Install Locally**: Use the following commands to compile Cython extensions and install the package in editable mode:
+ms.segments("FDSN:IV_MODE__H_N_?")   # shell-style pattern
+```
 
-  ```bash
-  python3 setup.py build_ext --inplace
-  pip install -e .
-  ```
+Invalid records, truncated records and the warnings of libmseed are
+reported as `MiniSeedWarning` and the reading goes on.
 
-  This approach allows you to make changes to the source code and have them immediately available without reinstalling the package.
+### Reading records
 
- ## Usage
+```python
+from cymseed3 import iter_records
 
- Here’s an example of how to use `cymseed3` to create, write, read, and export MiniSEED data:
+for record in iter_records("day.mseed"):
+    record.offset, record.reclen, record.format_version
+    record.sid, record.start_ns, record.end_ns, record.rate
+    record.encoding, record.pubversion, record.samplecnt
+    record.flags          # MiniSEED 3 flags (bit 2: clock locked, ...)
+    record.extra          # extra headers, e.g. {"FDSN": {"Time": ...}}
+    record.raw            # bytes of the record
+    record.data           # samples, decoded on first access
+    record.info()         # printed summary
+```
 
- ```python
- from cymseed3 import MiniSeed
+MiniSEED 2 fields without a direct MiniSEED 3 counterpart (sequence
+number, data quality, activity, I/O and quality flags, blockettes) are
+translated by libmseed into the FDSN extra headers. A SeedLink packet
+is one record: `next(iter_records(packet))`.
 
- # Initialise a Miniseed object
- ms = MiniSeed()
+### Writing
 
- record_dict = {
-     'network' : 'OX',
-     'station' : 'ABCD',
-     'location' : '00',
-     'channel' : 'HHZ',
-     'starttime' : '2010-01-10T08:23:45.019538Z',
-     'rate' : 200,
-     'nsamp' : 100,
-     'data' : [i for i in range(100)]
- }
+```python
+import numpy as np
+from cymseed3 import MiniSeed, ns_from_string
 
- ms.import_record(record_dict)
+start = ns_from_string("2026-11-02T10:15:30.123456Z")
 
- # Write data into binary buffer
- byte_buffer = ms.write(msformat=2, reclen=512, encoding=11)
+ms = MiniSeed()
+ms.add(("IV", "MODE", "", "HNZ"), start, 100.0,
+       np.arange(1000, dtype=np.int32))                 # STEIM2
+ms.add(("IV", "MODE", "", "HNE"), start, 100.0,
+       np.zeros(1000, dtype=np.float32))                # encoding 4
+ms.add(("IV", "MODE", "", "HNN"), start, 100.0,
+       [1, 2, 3], encoding=10)                          # STEIM1
+ms.write("out.mseed", version=2, reclen=512)            # or bytes
+```
 
- # Write bytes to file
- with open("my_file.mseed", "wb") as fid:
-     fid.write(byte_buffer)
+`pack_records` packs one series into records with chosen record length,
+encoding, publication version, flags and extra headers.
 
- # Read the file
- with open("my_file.mseed", 'rb') as fid:
-     byte_buffer = fid.read()
+### With NumPy
 
- # Read the buffer
- ms.read(byte_buffer, verbose=1)
+```python
+import numpy as np
 
- # Export data to a list of dictionaries.
- rec_list = ms.export_records()
+data = np.frombuffer(segment.data, dtype=segment.data.typecode)
+```
 
- print(rec_list[0])
- ```
+## License
 
- Running the example above will print the first record from the MiniSEED file as a Python dictionary, showing details like network, station, channel, and the data itself.
+cymseed3 is distributed under the GNU Lesser General Public License,
+version 3 or later (`COPYING.LESSER`, with the GNU General Public
+License in `COPYING`).
 
- ## Contributing
+The bundled libmseed (`earthscope/libmseed-<version>`, unmodified) is
+Copyright (C) Chad Trabant, EarthScope Data Services, and distributed
+under the Apache License, Version 2.0
+(`earthscope/libmseed-<version>/LICENSE`); its test files are used by
+the tests of cymseed3.
 
- Contributions are welcome! If you would like to contribute to this project, please fork the repository and submit a pull request. You can also report bugs or suggest new features by opening an issue.
+## Contact
 
- ### How to Contribute
-
- 1. Fork the repository.
- 2. Create a new branch (`git checkout -b feature/YourFeature`).
- 3. Commit your changes (`git commit -am 'Add a new feature'`).
- 4. Push to the branch (`git push origin feature/YourFeature`).
- 5. Open a Pull Request.
-
- ## License
-
- This project is licensed under the GNU General Public License v3.0 (GPL-3.0). You are free to use, modify, and distribute this software under the terms of the GPL-3.0 license. See the [LICENSE](LICENSE) file for more details.
-
- ## Acknowledgements
-
- `cymseed3` uses the `libmseed` library for handling MiniSEED files (https://github.com/EarthScope/libmseed). The `libmseed` library is distributed by Data EarthScope Services (Copyright (C) 2024 Chad Trabant) under the Apache License, Version 2.0. A copy of the library and its license is included in this package.
-
- ## Support
-
- If you have any questions or need help, please open an issue on the GitHub repository or contact us via email.
-
- ## Contact
-
- - Author: Valerio Poggi
- - GitHub: https://github.com/klunk386
+Issues and pull requests on
+[GitHub](https://github.com/shakelab/cymseed3). Author: Valerio Poggi.

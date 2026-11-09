@@ -57,13 +57,28 @@ Version 0.2.0 rewrites the interface; it is not compatible with 0.1.x.
 - Invalid data, truncated records and nonzero trailing bytes are
   skipped with a warning instead of printing to the terminal.
 - The package is now `cymseed3` with the private extension
-  `cymseed3._libmseed`; Cython 3 is required to build it.
+  `cymseed3._libmseed`; Cython 3.1 or later is required to build it.
+- License: GNU Lesser General Public License v3 or later (was GPL v3);
+  `COPYING` and `COPYING.LESSER` replace `LICENSE`. The bundled
+  libmseed keeps its Apache License 2.0.
+- Packaging: metadata only in `pyproject.toml` (SPDX license
+  expression `LGPL-3.0-or-later AND Apache-2.0`, license files),
+  PEP 517 build (`pip install .` or `pip install -e ".[dev]"`),
+  `setup.py` reduced to the extension, which compiles whichever
+  `earthscope/libmseed-*` is bundled; Python 3.10 or later on Linux or
+  macOS; the source distribution includes the tests and the libmseed
+  test files; type information (`py.typed`).
+- Continuous integration on Linux and macOS with Python 3.10-3.14, and
+  a test of the source distribution.
+- README rewritten for the new interface.
 
 ### Removed
 
 - `MiniSeed.export_records` and `MiniSeed.import_record` (replaced by
   `MiniSeed.segments` and `MiniSeed.add`), `MiniSeed.numtraceids`,
-  `MiniSeed.print`, the `convert_*` time functions and `example.py`.
+  `MiniSeed.print`, the `convert_*` time functions, `example.py`,
+  `install.sh`, `requirements.txt` and the archive of libmseed 3.1.3
+  (`earthscope/libmseed-3.1.3.tar.gz`).
 
 ### Fixed
 

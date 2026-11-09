@@ -1,88 +1,57 @@
-from setuptools import setup, Extension
-from Cython.Build import cythonize
+# ****************************************************************************
+# Copyright (C) 2019-2026, ShakeLab Developers.
+# This file is part of cymseed3.
+#
+# cymseed3 is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Lesser General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
+#
+# cymseed3 is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# with this download. If not, see <http://www.gnu.org/licenses/>
+# ****************************************************************************
+"""
+Build of the cymseed3 extension (metadata in pyproject.toml).
+
+The extension compiles the Cython binding together with the C sources
+of the bundled libmseed (earthscope/libmseed-<version>), which is used
+unmodified.
+"""
+
+from __future__ import annotations
+
+import glob
 import os
 
-# Directory of the C library
-libmseed_dir = os.path.join('earthscope', 'libmseed-3.5.4')
+from Cython.Build import cythonize
+from setuptools import Extension, setup
 
-# Read the README file for the long description
-long_description = ""
-if os.path.exists('README.md'):
-    with open('README.md', 'r') as f:
-        long_description = f.read()
-
-# List of C source files for libmseed
-libmseed_sources = [
-    os.path.join(libmseed_dir, 'crc32c.c'),
-    os.path.join(libmseed_dir, 'extraheaders.c'),
-    os.path.join(libmseed_dir, 'fileutils.c'),
-    os.path.join(libmseed_dir, 'genutils.c'),
-    os.path.join(libmseed_dir, 'gmtime64.c'),
-    os.path.join(libmseed_dir, 'logging.c'),
-    os.path.join(libmseed_dir, 'lookup.c'),
-    os.path.join(libmseed_dir, 'msio.c'),
-    os.path.join(libmseed_dir, 'msrutils.c'),
-    os.path.join(libmseed_dir, 'pack.c'),
-    os.path.join(libmseed_dir, 'packdata.c'),
-    os.path.join(libmseed_dir, 'parseutils.c'),
-    os.path.join(libmseed_dir, 'selection.c'),
-    os.path.join(libmseed_dir, 'tracelist.c'),
-    os.path.join(libmseed_dir, 'unpack.c'),
-    os.path.join(libmseed_dir, 'unpackdata.c'),
-    os.path.join(libmseed_dir, 'yyjson.c'),
+# Bundled libmseed: exactly one version in earthscope/.
+(LIBMSEED_DIR,) = [
+    path for path in glob.glob(os.path.join("earthscope", "libmseed-*"))
+    if os.path.isdir(path)
 ]
 
-# Compiler and linker flags
-extra_compile_args = ['-O2', '-Wall', '-DLIBMSEED_STATIC']
-extra_link_args = ['-lm']
+# C sources of the library (test programs and examples excluded).
+LIBMSEED_SOURCES = sorted(glob.glob(os.path.join(LIBMSEED_DIR, "*.c")))
 
-# Include directories
-include_dirs = [libmseed_dir]
-
-# Define the extension module
-ext_modules = [
-    Extension(
-        name="cymseed3._libmseed",
-        sources=["cymseed3/_libmseed.pyx"] + libmseed_sources,
-        include_dirs=include_dirs,
-        extra_compile_args=extra_compile_args,
-        extra_link_args=extra_link_args,
-    )
-]
-
-setup(
-    name="cymseed3",
-    version="0.2.0.dev0",
-    description="A Python package for reading and writing miniseed files using libmseed 3.",
-    long_description=long_description,
-    long_description_content_type='text/markdown',
-    author="Valerio Poggi",
-    author_email="vpoggi@ogs.it",
-    url="https://github.com/shakelab/cymseed3",
-    license="GPLv3",
-    packages=["cymseed3"],
-    package_data={"cymseed3": ["py.typed", "*.pyx", "*.pxd"]},
-    ext_modules=cythonize(ext_modules),
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "Programming Language :: C",
-        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
-        "Operating System :: OS Independent",
-        "Development Status :: 4 - Beta",
-        "Intended Audience :: Developers",
-        "Intended Audience :: Science/Research",
-        "Topic :: Software Development :: Libraries",
-        "Topic :: Scientific/Engineering"
-    ],
-    python_requires='>=3.6',
-    setup_requires=[
-        'setuptools>=42',
-        'cython>=0.29',
-    ],
-    install_requires=[
-        # Add other dependencies your package might have
-    ],
-    keywords='miniseed libmseed seismic data processing',
-    zip_safe=False
+extension = Extension(
+    name="cymseed3._libmseed",
+    sources=[os.path.join("cymseed3", "_libmseed.pyx"), *LIBMSEED_SOURCES],
+    include_dirs=[LIBMSEED_DIR],
+    define_macros=[("LIBMSEED_STATIC", None)],
+    extra_compile_args=["-O2", "-Wall"],
+    libraries=["m"],
 )
 
+setup(
+    ext_modules=cythonize(
+        [extension],
+        compiler_directives={"language_level": "3"},
+    ),
+)

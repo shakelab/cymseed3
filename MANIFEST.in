@@ -1,5 +1,10 @@
-include README.md LICENSE
-include *.pyx
-include *.pxd
-recursive-include earthscope *.h
-recursive-include earthscope *.c
+# Sources of the source distribution (with pyproject.toml, setup.py,
+# the package and the license files added by setuptools).
+include README.md CHANGELOG.md
+include cymseed3/*.pyx cymseed3/*.pxd cymseed3/py.typed
+exclude cymseed3/*.c
+recursive-include earthscope *.h *.c LICENSE README.md ChangeLog
+recursive-exclude earthscope/libmseed-*/test *.c *.h
+recursive-exclude earthscope/libmseed-*/example *
+recursive-include earthscope/libmseed-*/test/data *
+recursive-include tests *.py *.json
