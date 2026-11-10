@@ -21,15 +21,15 @@ jobs:
           - ubuntu-24.04-arm   # Linux aarch64 (manylinux, musllinux)
           - windows-latest     # Windows AMD64
           - macos-15-intel     # macOS x86_64
-          - macos-14           # macOS arm64
+          - macos-latest       # macOS arm64
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Build and test the wheels
         uses: pypa/cibuildwheel@v3.2.1
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: wheels-${{ matrix.os }}
           path: wheelhouse/*.whl
@@ -39,9 +39,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.14"
 
@@ -50,7 +50,7 @@ jobs:
           python -m pip install --upgrade pip build
           python -m build --sdist
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: sdist
           path: dist/*.tar.gz
