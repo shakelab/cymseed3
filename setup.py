@@ -30,6 +30,7 @@ import os
 
 from Cython.Build import cythonize
 from setuptools import Extension, setup
+from setuptools.command.build_ext import build_ext
 
 # Bundled libmseed: exactly one version in earthscope/.
 (LIBMSEED_DIR,) = [
@@ -45,11 +46,33 @@ extension = Extension(
     sources=[os.path.join("cymseed3", "_libmseed.pyx"), *LIBMSEED_SOURCES],
     include_dirs=[LIBMSEED_DIR],
     define_macros=[("LIBMSEED_STATIC", None)],
-    extra_compile_args=["-O2", "-Wall"],
-    libraries=["m"],
 )
 
+
+class BuildExt(build_ext):
+    """
+    Build the extension with the options of the compiler in use.
+
+    MSVC (Windows) takes its own option syntax and needs no math
+    library; GCC and Clang (Linux, macOS, MinGW) link libm.
+    """
+
+    def build_extensions(self):
+        msvc = self.compiler.compiler_type == "msvc"
+        for ext in self.extensions:
+            if msvc:
+                ext.extra_compile_args = ["/O2", "/W3"]
+                # As in libmseed's Makefile.win: no warnings for the
+                # standard C functions that MSVC considers unsafe.
+                ext.define_macros.append(("_CRT_SECURE_NO_WARNINGS", None))
+            else:
+                ext.extra_compile_args = ["-O2", "-Wall"]
+                ext.libraries.append("m")
+        super().build_extensions()
+
+
 setup(
+    cmdclass={"build_ext": BuildExt},
     ext_modules=cythonize(
         [extension],
         compiler_directives={"language_level": "3"},

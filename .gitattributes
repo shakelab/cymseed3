@@ -1,0 +1,6 @@
+# Text files are stored with LF and checked out with the native line
+# endings; the test data are kept byte for byte on every platform
+# (Windows runners check out with core.autocrlf=true).
+* text=auto
+tests/data/** -text
+earthscope/libmseed-*/test/data/** -text
