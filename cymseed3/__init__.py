@@ -54,4 +54,4 @@ __all__ = [
     "sid_to_codes",
 ]
 
-__version__ = "0.2.0"
+__version__ = "0.2.1"

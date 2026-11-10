@@ -26,9 +26,12 @@ on its own.
 pip install cymseed3
 ```
 
-Python 3.10 or later on Linux or macOS is required. The package is
-built from source, so a C compiler is needed (on macOS, the Xcode
-command line tools: `xcode-select --install`).
+Python 3.10 or later is required. Binary wheels are published for
+Linux (x86_64 and aarch64, glibc and musl), macOS (Intel and Apple
+Silicon) and Windows (64-bit), so no compiler is needed there. On
+other platforms pip builds the package from source, which needs a C
+compiler (on macOS, the Xcode command line tools:
+`xcode-select --install`; on Windows, the Microsoft C++ Build Tools).
 
 From the repository, for development:
 

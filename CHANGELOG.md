@@ -3,6 +3,22 @@
 All notable changes to cymseed3 are documented in this file. The format
 follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.2.1] - 2026-11-10
+
+### Added
+
+- Windows support: the extension builds with MSVC (compiler options
+  chosen from the compiler in use) and the tests run on Windows in CI.
+- Binary wheels for CPython 3.10-3.14 on Linux x86_64 and aarch64
+  (manylinux and musllinux), macOS x86_64 and arm64 and Windows AMD64,
+  built and tested with cibuildwheel (`.github/workflows/wheels.yml`,
+  run on version tags).
+
+### Changed
+
+- `.gitattributes` keeps the test data byte for byte on every
+  platform.
+
 ## [0.2.0] - 2026-11-09
 
 Version 0.2.0 rewrites the interface; it is not compatible with 0.1.x.

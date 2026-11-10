@@ -1,12 +1,11 @@
 # Build the wheels (cibuildwheel) and the source distribution, and test
-# them. The release workflow will publish the artifacts of a tag.
+# them, for version tags (v*) or on request. The artifacts of a tag run
+# are the files uploaded to PyPI (with twine).
 name: Wheels
 
 on:
   push:
-    branches: [main, "feature/**"]
     tags: ["v*"]
-  pull_request:
   workflow_dispatch:
 
 jobs:
