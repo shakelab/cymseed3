@@ -71,6 +71,9 @@ version = { attr = "cymseed3.__version__" }
 # numpy runs the tests of NumPy inputs as well (skipped without it).
 test-requires = ["pytest", "numpy"]
 test-command = "pytest -q -W error::UserWarning {project}/tests"
+# No free-threaded builds (cp314t): the extension is not declared
+# free-threading safe yet.
+skip = ["cp3??t-*"]
 
 [tool.cibuildwheel.linux]
 # manylinux and musllinux for the runner architecture (x86_64 or
