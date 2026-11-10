@@ -61,3 +61,24 @@ testpaths = ["tests"]
 
 [tool.setuptools.dynamic]
 version = { attr = "cymseed3.__version__" }
+
+# Wheels built by .github/workflows/wheels.yml (one runner per platform
+# and architecture). CPython versions come from requires-python; PyPy
+# and free-threaded builds are not enabled. Every wheel is installed in
+# a clean environment and tested there, outside the source tree.
+[tool.cibuildwheel]
+# numpy runs the tests of NumPy inputs as well (skipped without it).
+test-requires = ["pytest", "numpy"]
+test-command = "pytest -q -W error::UserWarning {project}/tests"
+
+[tool.cibuildwheel.linux]
+# manylinux and musllinux for the runner architecture (x86_64 or
+# aarch64); no 32-bit wheels.
+archs = ["native"]
+
+[tool.cibuildwheel.macos]
+# x86_64 on Intel runners, arm64 on Apple Silicon runners.
+archs = ["native"]
+
+[tool.cibuildwheel.windows]
+archs = ["AMD64"]
